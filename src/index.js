@@ -3,10 +3,10 @@
 // order dependent
 
 import "./tools.js";
+import "./events.js";
 import "./request.js";
 import {requestQueue} from "./CATMAID.js";
 import "./error.js";
-import "./events.js";
 import "./state.js";
 import "./command.js";
 
@@ -69,3 +69,15 @@ import "./workflow.js";
 import {CATMAID} from "./namespace.js";
 
 export {CATMAID, requestQueue, Arbor, CircuitGraphAnalysis, SynapseClustering, InstanceRegistry, fetchSkeletons};
+
+for (let obj of [window, global]) {
+  if (obj) {
+    obj.CATMAID = CATMAID;
+    obj.requestQueue = requestQueue;
+    obj.Arbor = Arbor;
+    obj.CircuitGraphAnalysis = CircuitGraphAnalysis;
+    obj.SynapseClustering = SynapseClustering;
+    obj.InstanceRegistry = InstanceRegistry;
+    obj.fetchSkeletons = fetchSkeletons;
+  }
+}
