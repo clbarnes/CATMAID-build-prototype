@@ -5,7 +5,7 @@
   */
 
 import $ from "jquery";
-import * as d3 from "d3";
+import {d3} from "../vendor/d3/d3.v3.min";
 
 import {CATMAID} from "./namespace.js";
 
