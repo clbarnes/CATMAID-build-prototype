@@ -4,12 +4,18 @@
   "description": "Library files for CATMAID",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
-    "webpack": "^4.29.5"
+    "clean-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.0"
   },
   "dependencies": {
     "es6-promise": "^4.2.6",
