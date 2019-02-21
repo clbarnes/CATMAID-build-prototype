@@ -3,6 +3,12 @@
 /* global
   CATMAID
 */
+import * as THREE from 'three';
+import extend from "jquery-extend";
+const $ = {extend};
+
+import {CATMAID} from "./namespace.js";
+import {Arbor} from "./Arbor.js";
 
 (function(CATMAID) {
 

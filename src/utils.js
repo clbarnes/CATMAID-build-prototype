@@ -9,6 +9,12 @@
 
 "use strict";
 
+import msgpack from "msgpack-lite";
+import $ from "jquery";
+
+import {CATMAID} from "./namespace.js";
+import {requestQueue} from "./CATMAID.js";
+
 var InstanceRegistry = function() {
   this.instances = {};
 };
@@ -145,3 +151,5 @@ var fetchSkeletons = function(skeleton_ids, fnMakeURL, fnPost, fnLoadedOne,
     fnDone();
   }
 };
+
+export {InstanceRegistry, fetchSkeletons}

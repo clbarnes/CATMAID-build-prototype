@@ -3,6 +3,8 @@
 
 "use strict";
 
+import * as numeric from "numeric";
+
 /**
  * Computes the 'signal flow' and the eigenvectors of the adjacency matrix,
  * stored in the z array and the e array of eigenvalue and eigenvector pairs
@@ -168,3 +170,5 @@ CircuitGraphAnalysis.prototype.eigen = function(D, L, maxiter) {
     return [a[1], X[a[0]]];
   });
 };
+
+export {CircuitGraphAnalysis};

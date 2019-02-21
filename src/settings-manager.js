@@ -1,3 +1,9 @@
+import extend from "jquery-extend";
+const $ = {extend};
+import {Promise} from "es6-promise";
+
+import {CATMAID} from "./namespace.js";
+
 (function (CATMAID) {
 
   "use strict";

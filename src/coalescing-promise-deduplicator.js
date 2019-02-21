@@ -1,3 +1,6 @@
+
+import {CATMAID} from "./namespace.js";
+
 (function (CATMAID) {
 
   'use strict';

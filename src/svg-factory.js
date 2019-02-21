@@ -4,6 +4,8 @@
   CATMAID
   */
 
+import {CATMAID} from "./namespace.js";
+
 (function(CATMAID) {
 
   var svgMimeType = 'image/svg+xml';

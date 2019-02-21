@@ -1,3 +1,8 @@
+
+import * as THREE from 'three';
+
+import {CATMAID} from "./namespace.js";
+
 (function(CATMAID) {
 
   /**

@@ -1,8 +1,14 @@
 /* -*- mode: espresso; espresso-indent-level: 2; indent-tabs-mode: nil -*- */
 /* vim: set softtabstop=2 shiftwidth=2 tabstop=2 expandtab: */
 
+import $ from "jquery";
+import {Promise} from "es6-promise";
+
+import {CATMAID} from "./namespace.js";
+
 // Global request queue
-var requestQueue = new CATMAID.RequestQueue();
+export const requestQueue = new CATMAID.RequestQueue();
+// todo: look at
 
 // Add some basic functionality
 (function(CATMAID) {

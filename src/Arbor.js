@@ -14,6 +14,10 @@
 
 "use strict";
 
+import * as THREE from 'three';
+import extend from "jquery-extend";
+const $ = {extend};
+
 var Arbor = function() {
 	/** The root node, by definition without a parent and not present in this.edges. */
 	this.root = null;
@@ -2299,3 +2303,5 @@ Arbor.prototype.interpolatePositions = function(positions, interpolatableX,
 
   return interpolatedNodes;
 };
+
+export {Arbor};

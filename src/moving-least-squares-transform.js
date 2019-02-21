@@ -4,6 +4,10 @@
   CATMAID
 */
 
+import * as numeric from "numeric";
+
+import {CATMAID} from "./namespace.js";
+
 (function(CATMAID) {
   "use strict";
 

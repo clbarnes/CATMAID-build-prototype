@@ -542,3 +542,5 @@ SynapseClustering.prototype.findAxonCut = function(arbor, outputs, above, positi
   // If none found, use the highest-order node
   return lowest ? lowest : furthest_from_root;
 };
+
+export {SynapseClustering};

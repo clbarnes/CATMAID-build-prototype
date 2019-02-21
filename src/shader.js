@@ -1,4 +1,6 @@
 
+import {CATMAID} from "./namespace.js";
+
 (function(CATMAID) {
 
   CATMAID.ShaderLib = {
