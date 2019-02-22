@@ -517,9 +517,9 @@ var SubscriptionError = function(message, detail) {
 };
 
 SubscriptionError.prototype = Object.create(CATMAID_Error.prototype);
-SubscriptionError.prototype.constructor = CATMAID_SubscriptionError;
+SubscriptionError.prototype.constructor = SubscriptionError;
 
 // Make skeleton source and subscription available in CATMAID namespace
 export let CATMAID_SkeletonSource = SkeletonSource;
 export let CATMAID_SkeletonSourceSubscription = SkeletonSourceSubscription;
-export let CATMAID_SubscriptionError = SubscriptionError;
+export var CATMAID_SubscriptionError = SubscriptionError;  // var needed for hoisting
