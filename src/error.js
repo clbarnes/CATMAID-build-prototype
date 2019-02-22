@@ -3,124 +3,120 @@
 
 import {CATMAID} from "./namespace.js";
 
-(function(CATMAID) {
+/**
+ * A general warning with description.
+ */
+CATMAID_Warning = function(message) {
+  this.name = 'CATMAID warning';
+  this.message = message || '(no message)';
+};
 
-  /**
-   * A general warning with description.
-   */
-  CATMAID.Warning = function(message) {
-    this.name = 'CATMAID warning';
-    this.message = message || '(no message)';
-  };
+/**
+ * A general error containing a message of what went wrong.
+ */
+CATMAID_Error = function(message, detail, type) {
+  this.name = 'CATMAID error';
+  this.message = message || '(no message)';
+  this.stack = (new Error()).stack;
+  this.detail= detail || this.stack;
+  this.type = type;
 
-  /**
-   * A general error containing a message of what went wrong.
-   */
-  CATMAID.Error = function(message, detail, type) {
-    this.name = 'CATMAID error';
-    this.message = message || '(no message)';
-    this.stack = (new Error()).stack;
-    this.detail= detail || this.stack;
-    this.type = type;
+  // Make error message also available through 'error' field, to be consistent
+  // with the back-end API in that regard.
+  this.error = this.message;
+};
 
-    // Make error message also available through 'error' field, to be consistent
-    // with the back-end API in that regard.
-    this.error = this.message;
-  };
+CATMAID_Error.prototype = Object.create(Error.prototype);
+CATMAID_Error.prototype.constructor = CATMAID_Error;
 
-  CATMAID.Error.prototype = Object.create(Error.prototype);
-  CATMAID.Error.prototype.constructor = CATMAID.Error;
+/**
+ * A simple value error type to indicate some sort of input value problem.
+ */
+CATMAID_ValueError = function(message, detail) {
+  CATMAID_Error.call(this, message, detail, 'ValueError');
+};
 
-  /**
-   * A simple value error type to indicate some sort of input value problem.
-   */
-  CATMAID.ValueError = function(message, detail) {
-    CATMAID.Error.call(this, message, detail, 'ValueError');
-  };
+CATMAID_ValueError.prototype = Object.create(CATMAID_Error.prototype);
+CATMAID_ValueError.prototype.constructor = CATMAID_ValueError;
 
-  CATMAID.ValueError.prototype = Object.create(CATMAID.Error.prototype);
-  CATMAID.ValueError.prototype.constructor = CATMAID.ValueError;
+/**
+ * A simple permission error type to indicate some lack of permissions.
+ */
+CATMAID_PermissionError = function(message, detail) {
+  CATMAID_Error.call(this, message, detail);
+};
 
-  /**
-   * A simple permission error type to indicate some lack of permissions.
-   */
-  CATMAID.PermissionError = function(message, detail) {
-    CATMAID.Error.call(this, message, detail);
-  };
+CATMAID_PermissionError.prototype = Object.create(CATMAID_Error.prototype);
+CATMAID_PermissionError.prototype.constructor = CATMAID_PermissionError;
 
-  CATMAID.PermissionError.prototype = Object.create(CATMAID.Error.prototype);
-  CATMAID.PermissionError.prototype.constructor = CATMAID.PermissionError;
+/**
+ * An error type to indicate out of range errors in a command history.
+ */
+CATMAID_CommandHistoryError = function(message, detail) {
+  CATMAID_Error.call(this, message, detail);
+};
 
-  /**
-   * An error type to indicate out of range errors in a command history.
-   */
-  CATMAID.CommandHistoryError = function(message, detail) {
-    CATMAID.Error.call(this, message, detail);
-  };
+CATMAID_CommandHistoryError.prototype = Object.create(CATMAID_Error.prototype);
+CATMAID_CommandHistoryError.prototype.constructor = CATMAID_CommandHistoryError;
 
-  CATMAID.CommandHistoryError.prototype = Object.create(CATMAID.Error.prototype);
-  CATMAID.CommandHistoryError.prototype.constructor = CATMAID.CommandHistoryError;
+/**
+ * An error type to indicate a state mismatch between front-end and back-end.
+ */
+CATMAID_StateMatchingError = function(message, detail) {
+  CATMAID_Error.call(this, message, detail);
+};
 
-  /**
-   * An error type to indicate a state mismatch between front-end and back-end.
-   */
-  CATMAID.StateMatchingError = function(message, detail) {
-    CATMAID.Error.call(this, message, detail);
-  };
+CATMAID_StateMatchingError.prototype = Object.create(CATMAID_Error.prototype);
+CATMAID_StateMatchingError.prototype.constructor = CATMAID_StateMatchingError;
 
-  CATMAID.StateMatchingError.prototype = Object.create(CATMAID.Error.prototype);
-  CATMAID.StateMatchingError.prototype.constructor = CATMAID.StateMatchingError;
+/**
+ * An error type to indicate an unsuccesful location lookup.
+ */
+CATMAID_LocationLookupError = function(message, detail) {
+  CATMAID_Error.call(this, message, detail);
+};
 
-  /**
-   * An error type to indicate an unsuccesful location lookup.
-   */
-  CATMAID.LocationLookupError = function(message, detail) {
-    CATMAID.Error.call(this, message, detail);
-  };
+CATMAID_LocationLookupError.prototype = Object.create(CATMAID_Error.prototype);
+CATMAID_LocationLookupError.prototype.constructor = CATMAID_LocationLookupError;
 
-  CATMAID.LocationLookupError.prototype = Object.create(CATMAID.Error.prototype);
-  CATMAID.LocationLookupError.prototype.constructor = CATMAID.LocationLookupError;
+CATMAID_TooManyWebGlContextsError = function(message, detail) {
+  CATMAID_Error.call(this, message, detail);
+};
 
-  CATMAID.TooManyWebGlContextsError = function(message, detail) {
-    CATMAID.Error.call(this, message, detail);
-  };
+CATMAID_TooManyWebGlContextsError.prototype = Object.create(CATMAID_Error.prototype);
+CATMAID_TooManyWebGlContextsError.prototype.constructor = CATMAID_TooManyWebGlContextsError;
 
-  CATMAID.TooManyWebGlContextsError.prototype = Object.create(CATMAID.Error.prototype);
-  CATMAID.TooManyWebGlContextsError.prototype.constructor = CATMAID.TooManyWebGlContextsError;
+/**
+ * Represent the error condition of no WebGL support.
+ */
+CATMAID_NoWebGLAvailableError = function(message, detail) {
+  CATMAID_Error.call(this, message, detail);
+};
 
-  /**
-   * Represent the error condition of no WebGL support.
-   */
-  CATMAID.NoWebGLAvailableError = function(message, detail) {
-    CATMAID.Error.call(this, message, detail);
-  };
+CATMAID_NoWebGLAvailableError.prototype = Object.create(CATMAID_Error.prototype);
+CATMAID_NoWebGLAvailableError.prototype.constructor = CATMAID_NoWebGLAvailableError;
 
-  CATMAID.NoWebGLAvailableError.prototype = Object.create(CATMAID.Error.prototype);
-  CATMAID.NoWebGLAvailableError.prototype.constructor = CATMAID.NoWebGLAvailableError;
+/**
+ * An error type to indicate network access problems.
+ */
+CATMAID_NetworkAccessError = function(message, detail) {
+  CATMAID_Error.call(this, message, detail);
+};
 
-  /**
-   * An error type to indicate network access problems.
-   */
-  CATMAID.NetworkAccessError = function(message, detail) {
-    CATMAID.Error.call(this, message, detail);
-  };
+CATMAID_NetworkAccessError.prototype = Object.create(CATMAID_Error.prototype);
+CATMAID_NetworkAccessError.prototype.constructor = CATMAID_NetworkAccessError;
 
-  CATMAID.NetworkAccessError.prototype = Object.create(CATMAID.Error.prototype);
-  CATMAID.NetworkAccessError.prototype.constructor = CATMAID.NetworkAccessError;
+/*
+ * An error type to indicate a pre-condition for some action is not met.
+ */
+CATMAID_PreConditionError = function(message, detail) {
+  CATMAID_Error.call(this, message, detail);
+};
 
-  /*
-   * An error type to indicate a pre-condition for some action is not met.
-   */
-  CATMAID.PreConditionError = function(message, detail) {
-    CATMAID.Error.call(this, message, detail);
-  };
+CATMAID_PreConditionError.prototype = Object.create(CATMAID_Error.prototype);
+CATMAID_PreConditionError.prototype.constructor = CATMAID_PreConditionError;
 
-  CATMAID.PreConditionError.prototype = Object.create(CATMAID.Error.prototype);
-  CATMAID.PreConditionError.prototype.constructor = CATMAID.PreConditionError;
-
-  /**
-   * An error type to indicate an abstract method is not implemented.
-   */
-  CATMAID.NotImplementedError = class NotImplementedError extends CATMAID.Error {};
-
-})(CATMAID);
+/**
+ * An error type to indicate an abstract method is not implemented.
+ */
+CATMAID_NotImplementedError = class NotImplementedError extends CATMAID_Error {};

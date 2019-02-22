@@ -6,10 +6,10 @@ import * as THREE from 'three';
 import {CATMAID} from "./namespace.js";
 
 // Namespace declaration
-CATMAID.tools = CATMAID.tools || {};
+CATMAID_tools = CATMAID_tools || {};
 
 /**
- * Definition of methods in CATMAID.tools namespace.
+ * Definition of methods in CATMAID_tools namespace.
  */
 (function(tools) {
 
@@ -267,7 +267,7 @@ CATMAID.tools = CATMAID.tools || {};
     targetField = targetField || sourceField;
     if (source && source.hasOwnProperty(sourceField) &&
         target && target.hasOwnProperty(targetField)) {
-      if (CATMAID.tools.isFn(mapFn)) {
+      if (CATMAID_tools.isFn(mapFn)) {
         target[targetField] = mapFn(source[sourceField]);
       } else {
         target[targetField] = source[sourceField];
@@ -304,7 +304,7 @@ CATMAID.tools = CATMAID.tools || {};
    * @param fn the entity to call
    */
   tools.callIfFn = function(fn) {
-    if (CATMAID.tools.isFn(fn)) {
+    if (CATMAID_tools.isFn(fn)) {
       if (arguments.length > 1) {
         return fn.apply(window, Array.prototype.slice.call(arguments, 1));
       } else {
@@ -365,8 +365,8 @@ CATMAID.tools = CATMAID.tools || {};
    * approximate luminance is above 50%.
    */
   tools.getContrastColor = function(hex, getHex) {
-    var rgb = CATMAID.tools.hexToRGB(hex);
-    var lum = CATMAID.tools.rgbToLuminance(rgb.r, rgb.g, rgb.b);
+    var rgb = CATMAID_tools.hexToRGB(hex);
+    var lum = CATMAID_tools.rgbToLuminance(rgb.r, rgb.g, rgb.b);
     if (getHex) {
       return lum <= 128 ? "#ffffff" : "#000000";
     } else {
@@ -480,7 +480,7 @@ CATMAID.tools = CATMAID.tools || {};
           } else if (secFraction.length === 3) {
             denominator = 1;
           } else {
-            throw new CATMAID.ValueError("Can't parse seconds fraction of date");
+            throw new CATMAID_ValueError("Can't parse seconds fraction of date");
           }
           return new Date(Date.UTC(parseInt(match[1], 10), parseInt(match[2], 10) - 1,
               parseInt(match[3], 10), parseInt(match[4], 10),
@@ -650,7 +650,7 @@ CATMAID.tools = CATMAID.tools || {};
 
     for (var i=0, length=element.childNodes.length; i<length; ++i) {
       var child = element.childNodes[i];
-      var childClone = CATMAID.tools.cloneNode(child, copyStyle);
+      var childClone = CATMAID_tools.cloneNode(child, copyStyle);
       copy.appendChild(childClone);
     }
 
@@ -664,10 +664,10 @@ CATMAID.tools = CATMAID.tools || {};
     // Add table to new window
     var printWindow = window.open("");
     if (!printWindow) {
-      CATMAID.warn("Couldn't open new window for printing");
+      CATMAID_warn("Couldn't open new window for printing");
       return;
     }
-    var clone = CATMAID.tools.cloneNode(element, true);
+    var clone = CATMAID_tools.cloneNode(element, true);
     var printHTML = "<html><body></body></html>";
     printWindow.document.write("<html><body></body></html>");
     printWindow.document.body.appendChild(clone);
@@ -734,7 +734,7 @@ CATMAID.tools = CATMAID.tools || {};
     var value = +number; // cast
     if (Number.isNaN(value) || value < min || value > max) {
       if (errorMessage) {
-        CATMAID.warn(errorMessage);
+        CATMAID_warn(errorMessage);
       }
       return null;
     }
@@ -779,7 +779,7 @@ CATMAID.tools = CATMAID.tools || {};
    */
   tools.permuteCoord = function(obj, perm) {
     let arr = [obj.x, obj.y, obj.z];
-    arr = CATMAID.tools.permute(arr, perm);
+    arr = CATMAID_tools.permute(arr, perm);
     return {x: arr[0], y: arr[1], z: arr[2]};
   };
 
@@ -862,7 +862,7 @@ CATMAID.tools = CATMAID.tools || {};
    * Extract the filename of a path without the file extension.
    */
   tools.extractFileNameNoExt = function(path) {
-    let sep = CATMAID.tools.getOS() === 'WIN' ? '\\' : '/';
+    let sep = CATMAID_tools.getOS() === 'WIN' ? '\\' : '/';
     let start = path.lastIndexOf(sep) + 1;
     let lastDotIdx = path.lastIndexOf('.');
     let end = (lastDotIdx === -1 || lastDotIdx < start) ? undefined : lastDotIdx;
@@ -895,4 +895,4 @@ CATMAID.tools = CATMAID.tools || {};
     return value ? value.id : undefined;
   };
 
-})(CATMAID.tools);
+})(CATMAID_tools);

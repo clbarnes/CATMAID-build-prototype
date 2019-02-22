@@ -1,5 +1,6 @@
 /* -*- mode: espresso; espresso-indent-level: 2; indent-tabs-mode: nil -*- */
 /* vim: set softtabstop=2 shiftwidth=2 tabstop=2 expandtab: */
+"use strict";
 
 /** Albert Cardona 2013-10-28
  *
@@ -12,7 +13,6 @@
  * A node without a parent is the root node, and it is assumed that there is only one.
  */
 
-"use strict";
 
 import * as THREE from 'three';
 import extend from "jquery-extend";

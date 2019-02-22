@@ -1,19 +1,19 @@
 /* -*- mode: espresso; espresso-indent-level: 2; indent-tabs-mode: nil -*- */
 /* vim: set softtabstop=2 shiftwidth=2 tabstop=2 expandtab: */
 /* global
+"use strict";
   Arbor,
   CATMAID,
   msgpack,
   requestQueue
   */
 
-"use strict";
 
 import msgpack from "msgpack-lite";
 import $ from "jquery";
 
 import {CATMAID} from "./namespace.js";
-import {requestQueue} from "./CATMAID.js";
+import {requestQueue} from "./CATMAID_js";
 
 var InstanceRegistry = function() {
   this.instances = {};
@@ -87,7 +87,7 @@ var fetchSkeletons = function(skeleton_ids, fnMakeURL, fnPost, fnLoadedOne,
       unloadable = [],
       fnMissing = function() {
         if (missing.length > 0 && confirm("Skeletons " + missing.join(', ') + " do not exist. Remove them from selections?")) {
-          CATMAID.skeletonListSources.removeSkeletons(missing);
+          CATMAID_skeletonListSources.removeSkeletons(missing);
         }
         if (unloadable.length > 0) {
           alert("Could not load skeletons: " + unloadable.join(', '));
@@ -134,7 +134,7 @@ var fetchSkeletons = function(skeleton_ids, fnMakeURL, fnPost, fnLoadedOne,
               } catch (e) {
                 finish();
                 console.log(e, e.stack);
-                CATMAID.msg("ERROR", "Problem loading skeleton " + skeleton_id);
+                CATMAID_msg("ERROR", "Problem loading skeleton " + skeleton_id);
               }
             },
             undefined,

@@ -1,23 +1,19 @@
 /* -*- mode: espresso; espresso-indent-level: 2; indent-tabs-mode: nil -*- */
 /* vim: set softtabstop=2 shiftwidth=2 tabstop=2 expandtab: */
+"use strict";
 
 import {CATMAID} from "./namespace.js";
 
-(function(CATMAID) {
 
-  "use strict";
+/**
+ * A minimal JSON serializer.
+ */
+CATMAID_JsonSerializer = function() {};
 
-  /**
-   * A minimal JSON serializer.
-   */
-  CATMAID.JsonSerializer = function() {};
+CATMAID_JsonSerializer.prototype.serialize = function(state) {
+  return JSON.stringify(state);
+};
 
-  CATMAID.JsonSerializer.prototype.serialize = function(state) {
-    return JSON.stringify(state);
-  };
-
-  CATMAID.JsonSerializer.prototype.deserialize = function(serializedState) {
-    return JSON.parse(serializedState);
-  };
-
-})(CATMAID);
+CATMAID_JsonSerializer.prototype.deserialize = function(serializedState) {
+  return JSON.parse(serializedState);
+};

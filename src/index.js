@@ -1,11 +1,11 @@
-// global: project, SkeletonAnnotations, CATMAID.TracingTool
+// global: project, SkeletonAnnotations, CATMAID_TracingTool
 
 // order dependent
 
 import "./tools.js";
 import "./events.js";
 import "./request.js";
-import {requestQueue} from "./CATMAID.js";
+import {requestQueue} from "./CATMAID_js";
 import "./error.js";
 import "./state.js";
 import "./command.js";
