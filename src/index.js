@@ -100,13 +100,14 @@ const module_objs = [
 ];
 
 // todo: this might break introspection?
-export const CATMAID = module_objs.reduce((accumulator, currentValue) => {
+export var CATMAID = module_objs.reduce((accumulator, currentValue) => {
   const prefix = "CATMAID_";
-  for (let [key, value] of currentValue.entries()) {
+  for (let [key, value] of Object.entries(currentValue)) {
     if (key.startsWith(prefix)) {
       accumulator[key.slice(prefix.length)] = value;
     }
   }
+  return accumulator;
 }, {});
 
 CATMAID.tools = tools;
