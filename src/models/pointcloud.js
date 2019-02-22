@@ -3,6 +3,9 @@
 "use strict";
 
 import {CATMAID} from "../namespace.js";
+import {CATMAID_asEventSource} from "../events";
+import * as project from "webpack/lib/Module";
+import {CATMAID_fetch, CATMAID_makeURL} from "../CATMAID";
 
 
 var Pointcloud = {};

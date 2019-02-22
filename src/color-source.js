@@ -2,6 +2,11 @@
 import * as THREE from 'three';
 
 import {CATMAID} from "./namespace.js";
+import {CATMAID_ValueError} from "./error";
+import * as project from "webpack/lib/Module";
+import {CATMAID_fetch} from "./CATMAID";
+import {CATMAID_SkeletonSourceSubscription} from "./skeleton_source";
+import {CATMAID_BasicSkeletonSource} from "./basic_skeleton_source";
 
 /**
  * A color source will subscribe to the passed in skeleton source and colors

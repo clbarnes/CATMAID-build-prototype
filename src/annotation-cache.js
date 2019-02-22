@@ -5,6 +5,9 @@
 import $ from "jquery";
 
 import {CATMAID} from "./namespace.js";
+import * as project from "webpack/lib/Module";
+import {CATMAID_fetch} from "./CATMAID";
+import * as CATMAID_Annotations from "jszip/lib/stream/GenericWorker";
 
 
 /**

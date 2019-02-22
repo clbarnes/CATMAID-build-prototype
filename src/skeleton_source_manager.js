@@ -5,6 +5,10 @@
 import $ from "jquery";
 
 import {CATMAID} from "./namespace.js";
+import {CATMAID_SkeletonSourceSubscription, CATMAID_SubscriptionError} from "./skeleton_source";
+import {CATMAID_makeDocURL} from "./CATMAID";
+import {CATMAID_asEventSource} from "./events";
+import * as SkeletonAnnotations from "jszip/lib/stream/GenericWorker";
 
 
 // A prototype for a manager of existing skeleton sources
@@ -17,11 +21,11 @@ var SkeletonSourceManager = function() {
   this.defaultSelectLastSource = true;
 
   // Register to get updates two skeletons are joined
-  CATMAID_Skeletons.on(CATMAID_Skeletons.EVENT_SKELETONS_JOINED,
+  SkeletonAnnotations.on(CATMAID_Skeletons.EVENT_SKELETONS_JOINED,
       this.replaceSkeleton, this);
 
   // Register to get updates about deleted neurons
-  CATMAID_Skeletons.on(CATMAID_Skeletons.EVENT_SKELETON_DELETED,
+  SkeletonAnnotations.on(CATMAID_Skeletons.EVENT_SKELETON_DELETED,
       this.removeSkeleton, this);
 
   // Register to active node changes to highlight skeleton in sources

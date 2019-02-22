@@ -2,6 +2,9 @@
 /* vim: set softtabstop=2 shiftwidth=2 tabstop=2 expandtab: */
 
 import {CATMAID} from "./namespace.js";
+import {CATMAID_ValueError} from "./error";
+import {CATMAID_noop} from "./CATMAID";
+import {CATMAID_SkeletonSource} from "./skeleton_source";
 
 /**
  * The basic skeleton source implements the skeleton source interface and

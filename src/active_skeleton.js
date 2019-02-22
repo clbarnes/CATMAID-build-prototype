@@ -5,6 +5,8 @@
 import * as THREE from 'three';
 
 import {CATMAID} from "./namespace.js";
+import {CATMAID_SkeletonSource} from "./skeleton_source";
+import * as SkeletonAnnotations from "jszip/lib/stream/GenericWorker";
 // todo: SkeletonAnnotations, CATMAID_TracingTool
 
 

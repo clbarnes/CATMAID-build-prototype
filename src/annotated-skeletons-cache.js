@@ -5,6 +5,9 @@
 import {CATMAID} from "./namespace.js";
 
 import {Promise} from "es6-promise";
+import * as project from "webpack/lib/Module";
+import {CATMAID_ValueError} from "./error";
+import * as CATMAID_Annotations from "jszip/lib/stream/GenericWorker";
 
 
 /**

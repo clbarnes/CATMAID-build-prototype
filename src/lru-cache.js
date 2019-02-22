@@ -3,6 +3,8 @@
 "use strict";
 
 import {CATMAID} from "./namespace.js";
+import {CATMAID_PreConditionError} from "./error";
+import {CATMAID_asEventSource} from "./events";
 
 
 /**

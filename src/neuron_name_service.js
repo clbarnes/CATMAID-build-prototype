@@ -8,6 +8,11 @@ import extend from "jquery-extend";
 const $ = {extend};
 
 import {CATMAID} from "./namespace.js";
+import * as CATMAID_Init from "jszip/lib/stream/GenericWorker";
+import {CATMAID_fetch} from "./CATMAID";
+import * as project from "webpack/lib/Module";
+import {CATMAID_ValueError} from "./error";
+import {CATMAID_Settings} from "./settings-manager";
 
 
 /**
@@ -749,11 +754,11 @@ export let CATMAID_NeuronNameService = (function()
        * annotation links so that the name service can update itself.
        */
       registerEventHandlers: function() {
-        CATMAID_Skeletons.on(CATMAID_Skeletons.EVENT_SKELETON_DELETED,
+        CATMAID_Init.on(CATMAID_Skeletons.EVENT_SKELETON_DELETED,
             this.unregisterSingleFromAllClients, instance);
-        CATMAID_Annotations.on(CATMAID_Annotations.EVENT_ANNOTATIONS_CHANGED,
+        CATMAID_Init.on(CATMAID_Annotations.EVENT_ANNOTATIONS_CHANGED,
             this.handleAnnotationChange, instance);
-        CATMAID_Neurons.on(CATMAID_Neurons.EVENT_NEURON_RENAMED,
+        CATMAID_Init.on(CATMAID_Neurons.EVENT_NEURON_RENAMED,
             this.handleNeuronNameChange, instance);
         CATMAID_Init.on(CATMAID_Init.EVENT_PROJECT_CHANGED,
             this.loadConfigurationFromSettings, instance);

@@ -3,6 +3,12 @@
 "use strict";
 
 import {CATMAID} from "../namespace.js";
+import {CATMAID_ValueError} from "../error";
+import {CATMAID_makeCommand} from "../command";
+import {CATMAID_asEventSource} from "../events";
+import {CATMAID_Skeletons} from "./skeleton";
+import {CATMAID_fetch} from "../CATMAID";
+import * as project from "webpack/lib/Module";
 
 
 /**

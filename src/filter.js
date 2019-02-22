@@ -3,9 +3,16 @@
 "use strict";
 
 import $ from "jquery";
-import {Promise} from "es6-promise";
+import {Promise as CATMAID_User, Promise} from "es6-promise";
 
 import {CATMAID} from "./namespace.js";
+import * as CATMAID_skeletonListSources from "webpack/lib/ExternalModule";
+import * as project from "webpack/lib/Module";
+import {CATMAID_ValueError} from "./error";
+import {CATMAID_fetch, CATMAID_makeURL} from "./CATMAID";
+import {SynapseClustering} from "./synapse_clustering";
+import {CATMAID_ArborParser} from "./arbor_parser";
+import {fetchSkeletons} from "./utils";
 
 
 /**

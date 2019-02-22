@@ -5,6 +5,7 @@
 import {Promise} from "es6-promise";
 
 import {CATMAID} from "../namespace.js";
+import {CATMAID_fetch} from "../CATMAID";
 
 
 // Keep a copy of the available relations.

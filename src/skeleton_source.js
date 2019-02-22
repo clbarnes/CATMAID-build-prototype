@@ -5,6 +5,10 @@
 import * as THREE from 'three';
 
 import {CATMAID} from "./namespace.js";
+import {CATMAID_Error, CATMAID_ValueError} from "./error";
+import {WebGLAttributes as CATMAID_skeletonListSources} from "three/src/renderers/webgl/WebGLAttributes";
+import {Vector4 as CATMAID_skeletonListSources} from "three/src/math/Vector4";
+import {CATMAID_asEventSource} from "./events";
 
 
 /**

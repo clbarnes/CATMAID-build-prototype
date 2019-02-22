@@ -3,6 +3,8 @@
 "use strict";
 
 import {CATMAID} from "./namespace.js";
+import {CATMAID_ArborParser} from "./arbor_parser";
+import {CATMAID_ValueError} from "./error";
 
 
 /**

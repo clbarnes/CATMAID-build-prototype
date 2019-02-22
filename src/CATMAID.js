@@ -6,6 +6,16 @@ import $ from "jquery";
 import {Promise} from "es6-promise";
 
 import {CATMAID} from "./namespace.js";
+import {
+  CATMAID_Error,
+  CATMAID_LocationLookupError, CATMAID_NetworkAccessError,
+  CATMAID_PermissionError,
+  CATMAID_StateMatchingError,
+  CATMAID_ValueError
+} from "./error";
+import {CATMAID_RequestQueue} from "./request";
+import * as CATMAID_CLIENT_VERSION from "webpack/lib/Chunk";
+import {AnimationClip as jQuery} from "three/src/animation/AnimationClip";
 
 // Global request queue
 export const requestQueue = new CATMAID_RequestQueue();

@@ -5,6 +5,12 @@
 import {Promise} from "es6-promise";
 
 import {CATMAID} from "../namespace.js";
+import {CATMAID_LocalState, CATMAID_SimpleSetState} from "../state";
+import {CATMAID_makeCommand} from "../command";
+import {CATMAID_ValueError} from "../error";
+import {CATMAID_asEventSource} from "../events";
+import * as project from "webpack/lib/Module";
+import {CATMAID_fetch, CATMAID_requirePermission} from "../CATMAID";
 
 
 
