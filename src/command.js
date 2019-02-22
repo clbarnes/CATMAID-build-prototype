@@ -4,6 +4,7 @@ import {Promise} from "es6-promise";
 import {CATMAID_CommandHistoryError, CATMAID_Error, CATMAID_ValueError} from "./error";
 import {CATMAID_addHeaderToRequests, CATMAID_noop, CATMAID_removeHeaderFromRequests} from "./CATMAID";
 import {CATMAID_asEventSource} from "./events";
+import * as CATMAID_tools from "./tools";
 
 
 // A global command counter which is used to provide an unique ID for

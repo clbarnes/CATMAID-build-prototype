@@ -4,6 +4,7 @@
 
 import {CATMAID_ArborParser} from "./arbor_parser";
 import {CATMAID_ValueError} from "./error";
+import * as CATMAID_tools from "./tools";
 
 
 /**

@@ -10,6 +10,8 @@ import {CATMAID_fetch, CATMAID_makeURL} from "./CATMAID";
 import {SynapseClustering} from "./synapse_clustering";
 import {CATMAID_ArborParser} from "./arbor_parser";
 import {fetchSkeletons} from "./utils";
+import * as CATMAID_tools from "./tools";
+
 // project, CATMAID_skeletonListSources
 
 

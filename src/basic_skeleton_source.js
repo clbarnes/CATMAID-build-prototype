@@ -4,6 +4,8 @@
 import {CATMAID_ValueError} from "./error";
 import {CATMAID_noop} from "./CATMAID";
 import {CATMAID_SkeletonSource} from "./skeleton_source";
+import * as CATMAID_tools from "./tools";
+
 
 /**
  * The basic skeleton source implements the skeleton source interface and

@@ -5,6 +5,7 @@
 import * as THREE from 'three';
 
 import {CATMAID_SkeletonSource} from "./skeleton_source";
+import * as CATMAID_tools from "./tools";
 // todo: SkeletonAnnotations, CATMAID.TracingTool
 
 

@@ -12,6 +12,7 @@ import {CATMAID_ValueError} from "./error";
 import {CATMAID_NodeFilter} from "./filter";
 import {CATMAID_ConnectorModel} from "./models/connectors";
 import {CATMAID_fetch} from "./CATMAID";
+import * as CATMAID_tools from "./tools";
 
 
 /**

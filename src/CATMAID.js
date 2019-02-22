@@ -14,6 +14,8 @@ import {
 } from "./error";
 import {CATMAID_RequestQueue} from "./request";
 import {AnimationClip as jQuery} from "three/src/animation/AnimationClip";
+import * as CATMAID_tools from "./tools";
+
 // CATMAID_CLIENT_VERSION
 
 // Global request queue

@@ -4,6 +4,7 @@
 
 import {CATMAID_PreConditionError} from "./error";
 import {CATMAID_asEventSource} from "./events";
+import * as CATMAID_tools from "./tools";
 
 
 /**

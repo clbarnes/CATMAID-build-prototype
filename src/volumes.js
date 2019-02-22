@@ -10,6 +10,7 @@ import {Promise} from "es6-promise";
 
 import {CATMAID_SkeletonFilter} from "./filter";
 import {CATMAID_asEventSource} from "./events";
+import * as CATMAID_tools from "./tools";
 
 
 export let CATMAID_Volume = function(options) {

@@ -1,5 +1,6 @@
 "use strict";
 import {Promise} from "es6-promise";
+import * as CATMAID_tools from "./tools";
 
 
 

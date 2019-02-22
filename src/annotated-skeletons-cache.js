@@ -6,6 +6,7 @@
 import {Promise} from "es6-promise";
 import {CATMAID_ValueError} from "./error";
 import {CATMAID_Annotations} from "./models/annotations";
+import * as CATMAID_tools from "./tools";
 // todo: project
 
 
@@ -34,9 +35,9 @@ var AnnotatedSkeletonsCache = function() {
 
   // Listen to annotation deletions so these annotations can be removed from
   // the cache.
-  CATMAID.Annotations.on(CATMAID.Annotations.EVENT_ANNOTATIONS_DELETED,
+  CATMAID_Annotations.on(CATMAID_Annotations.EVENT_ANNOTATIONS_DELETED,
       this._handleDeletedAnnotations, this);
-  CATMAID.Annotations.on(CATMAID.Annotations.EVENT_ANNOTATIONS_CHANGED,
+  CATMAID_Annotations.on(CATMAID_Annotations.EVENT_ANNOTATIONS_CHANGED,
       this._handleChangedAnnotations, this);
 };
 
@@ -188,7 +189,7 @@ AnnotatedSkeletonsCache.prototype.register = function (annotationName, callback,
   } else {
     newlyTracked = true;
     var tracked = {
-      id: CATMAID.Annotations.getID(annotationName),
+      id: CATMAID_Annotations.getID(annotationName),
       registered: new Set(),
       skeletonIDs: [new Set(), new Set()],
     };

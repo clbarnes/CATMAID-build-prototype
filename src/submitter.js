@@ -10,6 +10,7 @@ import $ from "jquery";
 
 import {CATMAID_Error} from "./error";
 import {CATMAID_parseErrorResponse} from "./CATMAID";
+import * as CATMAID_tools from "./tools";
 
 
 /**

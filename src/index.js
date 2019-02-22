@@ -52,7 +52,6 @@ import * as workflow from "./workflow.js";
 
 const module_objs = [
   catmaid,
-  tools,
   events,
   request,
   error,
@@ -109,6 +108,8 @@ export const CATMAID = module_objs.reduce((accumulator, currentValue) => {
     }
   }
 }, {});
+
+CATMAID.tools = tools;
 
 import {Arbor} from "./Arbor.js";
 export {Arbor};

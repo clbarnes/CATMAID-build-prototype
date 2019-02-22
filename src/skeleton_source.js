@@ -6,6 +6,7 @@ import * as THREE from 'three';
 
 import {CATMAID_Error, CATMAID_ValueError} from "./error";
 import {CATMAID_asEventSource} from "./events";
+import * as CATMAID_tools from "./tools";
 
 
 /**

@@ -7,6 +7,8 @@ import $ from "jquery";
 // project
 import {CATMAID_fetch} from "./CATMAID";
 import {CATMAID_Annotations} from "./models/annotations";
+import * as CATMAID_tools from "./tools";
+
 
 /**
  * The annotation cache provides annotation names and their IDs.
