@@ -4,11 +4,9 @@
 
 import $ from "jquery";
 
-import {CATMAID} from "./namespace.js";
 import {CATMAID_SkeletonSourceSubscription, CATMAID_SubscriptionError} from "./skeleton_source";
 import {CATMAID_makeDocURL} from "./CATMAID";
 import {CATMAID_asEventSource} from "./events";
-import * as SkeletonAnnotations from "jszip/lib/stream/GenericWorker";
 
 
 // A prototype for a manager of existing skeleton sources
@@ -642,16 +640,7 @@ SkeletonSourceManager.EVENT_SOURCE_REMOVED = "skeleton_source_removed";
 export let CATMAID_SkeletonSourceManager = SkeletonSourceManager;
 
 // Create a default instance within the CATMAID namespace
-var singleton;
-Object.defineProperty(CATMAID, "skeletonListSources", {
-  get: function() {
-    if (!singleton) {
-      singleton = new SkeletonSourceManager();
-    }
-    return singleton;
-  },
-  set: function() { /* No setting */ }
-});
+export const CATMAID_skeletonListSources = new SkeletonSourceManager();
 
 /**
  * Helper function to  test if to values are the same.
