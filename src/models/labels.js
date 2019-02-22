@@ -4,7 +4,6 @@
 
 import {Promise} from "es6-promise";
 
-import {CATMAID} from "../namespace.js";
 import {CATMAID_ValueError} from "../error";
 import {CATMAID_makeCommand} from "../command";
 import {CATMAID_asEventSource} from "../events";

@@ -1,6 +1,5 @@
 "use strict";
 
-import {CATMAID} from "./namespace.js";
 
 
 export let CATMAID_CoalescingPromiseDeduplicator = class CoalescingPromiseDeduplicator {

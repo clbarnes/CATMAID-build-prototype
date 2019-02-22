@@ -2,7 +2,6 @@
 /* vim: set softtabstop=2 shiftwidth=2 tabstop=2 expandtab: */
 "use strict";
 
-import {CATMAID} from "./namespace.js";
 import {CATMAID_ArborParser} from "./arbor_parser";
 import {CATMAID_ValueError} from "./error";
 

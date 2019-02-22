@@ -5,12 +5,9 @@
 import {Promise} from "es6-promise";
 import $ from "jquery";
 
-import {CATMAID} from "../namespace.js";
 import {CATMAID_asEventSource} from "../events";
-import * as project from "webpack/lib/Module";
+// project
 import {CATMAID_fetch} from "../CATMAID";
-import {WebGLRenderer as glWidget} from "three";
-import * as glWidget from "webpack/lib/BannerPlugin";
 import {CATMAID_PreConditionError, CATMAID_ValueError} from "../error";
 import {CATMAID_ArborParser} from "../arbor_parser";
 

@@ -7,7 +7,6 @@
 import $ from "jquery";
 import {d3} from "../vendor/d3/d3.v3.min";
 
-import {CATMAID} from "./namespace.js";
 
 var SVGUtil = {};
 

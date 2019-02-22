@@ -1,5 +1,4 @@
 
-import {CATMAID} from "./namespace.js";
 
 export let CATMAID_ShaderLib = {
 

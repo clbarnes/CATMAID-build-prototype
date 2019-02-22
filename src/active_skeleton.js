@@ -4,10 +4,8 @@
 
 import * as THREE from 'three';
 
-import {CATMAID} from "./namespace.js";
 import {CATMAID_SkeletonSource} from "./skeleton_source";
-import * as SkeletonAnnotations from "jszip/lib/stream/GenericWorker";
-// todo: SkeletonAnnotations, CATMAID_TracingTool
+// todo: SkeletonAnnotations, CATMAID.TracingTool
 
 
 /**
@@ -74,7 +72,7 @@ ActiveSkeleton.prototype.getSelectedSkeletonModels = function() {
 ActiveSkeleton.prototype.getSkeletonModels = ActiveSkeleton.prototype.getSelectedSkeletonModels;
 
 ActiveSkeleton.prototype.highlight = function(skeleton_id) {
-  CATMAID_TracingTool.goToNearestInNeuronOrSkeleton('skeleton', skeleton_id);
+  CATMAID.TracingTool.goToNearestInNeuronOrSkeleton('skeleton', skeleton_id);
 };
 
 ActiveSkeleton.prototype._handleActiveNodeChange = function(node, skeletonChange) {

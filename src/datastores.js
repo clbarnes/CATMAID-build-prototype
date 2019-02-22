@@ -3,8 +3,7 @@ import extend from "jquery-extend";
 const $ = {extend};
 import {Promise} from "es6-promise";
 
-import {CATMAID} from "./namespace.js";
-import * as project from "webpack/lib/Module";
+// project
 import {CATMAID_makeURL} from "./CATMAID";
 import {CATMAID_asEventSource} from "./events";
 

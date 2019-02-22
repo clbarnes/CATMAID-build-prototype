@@ -1,5 +1,4 @@
 "use strict";
-import {CATMAID} from "../namespace.js";
 
 
 /**

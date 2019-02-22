@@ -7,7 +7,6 @@ import * as THREE from 'three';
 import extend from "jquery-extend";
 const $ = {extend};
 
-import {CATMAID} from "./namespace.js";
 import {Arbor} from "./Arbor.js";
 
 /** Parse JSON data from compact-skeleton and compact-arbor into an object

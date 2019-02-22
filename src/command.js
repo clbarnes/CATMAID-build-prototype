@@ -1,7 +1,6 @@
 "use strict";
 import {Promise} from "es6-promise";
 
-import {CATMAID} from "./namespace.js";
 import {CATMAID_CommandHistoryError, CATMAID_Error, CATMAID_ValueError} from "./error";
 import {CATMAID_addHeaderToRequests, CATMAID_noop, CATMAID_removeHeaderFromRequests} from "./CATMAID";
 import {CATMAID_asEventSource} from "./events";

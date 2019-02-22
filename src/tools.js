@@ -3,7 +3,6 @@
 
 import * as THREE from 'three';
 
-import {CATMAID} from "./namespace.js";
 import {CATMAID_ValueError} from "./error";
 
 // Namespace declaration

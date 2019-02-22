@@ -2,12 +2,11 @@
 /* vim: set softtabstop=2 shiftwidth=2 tabstop=2 expandtab: */
 "use strict";
 
-import {CATMAID} from "./namespace.js";
 
 import {Promise} from "es6-promise";
-import * as project from "webpack/lib/Module";
 import {CATMAID_ValueError} from "./error";
-import * as CATMAID_Annotations from "jszip/lib/stream/GenericWorker";
+import {CATMAID_Annotations} from "./models/annotations";
+// todo: project
 
 
 /**
@@ -35,9 +34,9 @@ var AnnotatedSkeletonsCache = function() {
 
   // Listen to annotation deletions so these annotations can be removed from
   // the cache.
-  CATMAID_Annotations.on(CATMAID_Annotations.EVENT_ANNOTATIONS_DELETED,
+  CATMAID.Annotations.on(CATMAID.Annotations.EVENT_ANNOTATIONS_DELETED,
       this._handleDeletedAnnotations, this);
-  CATMAID_Annotations.on(CATMAID_Annotations.EVENT_ANNOTATIONS_CHANGED,
+  CATMAID.Annotations.on(CATMAID.Annotations.EVENT_ANNOTATIONS_CHANGED,
       this._handleChangedAnnotations, this);
 };
 
@@ -189,7 +188,7 @@ AnnotatedSkeletonsCache.prototype.register = function (annotationName, callback,
   } else {
     newlyTracked = true;
     var tracked = {
-      id: CATMAID_annotations.getID(annotationName),
+      id: CATMAID.Annotations.getID(annotationName),
       registered: new Set(),
       skeletonIDs: [new Set(), new Set()],
     };

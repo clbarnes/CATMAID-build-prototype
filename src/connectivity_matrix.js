@@ -8,7 +8,6 @@
 
 import {Promise} from "es6-promise";
 
-import {CATMAID} from "./namespace.js";
 import {CATMAID_ValueError} from "./error";
 import {CATMAID_NodeFilter} from "./filter";
 import {CATMAID_ConnectorModel} from "./models/connectors";

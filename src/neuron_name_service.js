@@ -7,12 +7,10 @@ import {Promise} from "es6-promise";
 import extend from "jquery-extend";
 const $ = {extend};
 
-import {CATMAID} from "./namespace.js";
-import * as CATMAID_Init from "jszip/lib/stream/GenericWorker";
 import {CATMAID_fetch} from "./CATMAID";
-import * as project from "webpack/lib/Module";
 import {CATMAID_ValueError} from "./error";
 import {CATMAID_Settings} from "./settings-manager";
+// project, CATMAID.Init
 
 
 /**
@@ -754,13 +752,13 @@ export let CATMAID_NeuronNameService = (function()
        * annotation links so that the name service can update itself.
        */
       registerEventHandlers: function() {
-        CATMAID_Init.on(CATMAID_Skeletons.EVENT_SKELETON_DELETED,
+        CATMAID.Init.on(CATMAID_Skeletons.EVENT_SKELETON_DELETED,
             this.unregisterSingleFromAllClients, instance);
-        CATMAID_Init.on(CATMAID_Annotations.EVENT_ANNOTATIONS_CHANGED,
+        CATMAID.Init.on(CATMAID_Annotations.EVENT_ANNOTATIONS_CHANGED,
             this.handleAnnotationChange, instance);
-        CATMAID_Init.on(CATMAID_Neurons.EVENT_NEURON_RENAMED,
+        CATMAID.Init.on(CATMAID_Neurons.EVENT_NEURON_RENAMED,
             this.handleNeuronNameChange, instance);
-        CATMAID_Init.on(CATMAID_Init.EVENT_PROJECT_CHANGED,
+        CATMAID.Init.on(CATMAID.Init.EVENT_PROJECT_CHANGED,
             this.loadConfigurationFromSettings, instance);
       },
 
@@ -775,7 +773,7 @@ export let CATMAID_NeuronNameService = (function()
             this.handleAnnotationChange, instance);
         CATMAID_Neurons.off(CATMAID_Neurons.EVENT_NEURON_RENAMED,
             this.handleNeuronNameChange, instance);
-        CATMAID_Init.off(CATMAID_Init.EVENT_PROJECT_CHANGED,
+        CATMAID.Init.off(CATMAID.Init.EVENT_PROJECT_CHANGED,
             this.loadConfigurationFromSettings, instance);
       },
 

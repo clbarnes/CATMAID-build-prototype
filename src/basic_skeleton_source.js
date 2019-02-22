@@ -1,7 +1,6 @@
 /* -*- mode: espresso; espresso-indent-level: 2; indent-tabs-mode: nil -*- */
 /* vim: set softtabstop=2 shiftwidth=2 tabstop=2 expandtab: */
 
-import {CATMAID} from "./namespace.js";
 import {CATMAID_ValueError} from "./error";
 import {CATMAID_noop} from "./CATMAID";
 import {CATMAID_SkeletonSource} from "./skeleton_source";

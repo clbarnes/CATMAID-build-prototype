@@ -8,10 +8,7 @@
 
 import {Promise} from "es6-promise";
 
-import {CATMAID} from "./namespace.js";
 import {CATMAID_SkeletonFilter} from "./filter";
-import * as CATMAID_skeletonListSources from "webpack/lib/ExternalModule";
-import * as project from "webpack/lib/Module";
 import {CATMAID_asEventSource} from "./events";
 
 

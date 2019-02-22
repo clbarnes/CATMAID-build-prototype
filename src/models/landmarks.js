@@ -4,10 +4,9 @@
 
 import {Promise} from "es6-promise";
 
-import {CATMAID} from "../namespace.js";
 import {CATMAID_asEventSource} from "../events";
 import {CATMAID_fetch} from "../CATMAID";
-import * as project from "webpack/lib/Module";
+// project
 import {CATMAID_ValueError} from "../error";
 
 

@@ -4,7 +4,6 @@
 
 import * as THREE from 'three';
 
-import {CATMAID} from "./namespace.js";
 
 
 var COLORS = [[1, 1, 0], // yellow

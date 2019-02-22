@@ -4,11 +4,9 @@
 
 import $ from "jquery";
 
-import {CATMAID} from "./namespace.js";
-import * as project from "webpack/lib/Module";
+// project
 import {CATMAID_fetch} from "./CATMAID";
-import * as CATMAID_Annotations from "jszip/lib/stream/GenericWorker";
-
+import {CATMAID_Annotations} from "./models/annotations";
 
 /**
  * The annotation cache provides annotation names and their IDs.

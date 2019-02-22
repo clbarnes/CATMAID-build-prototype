@@ -2,13 +2,12 @@
 /* vim: set softtabstop=2 shiftwidth=2 tabstop=2 expandtab: */
 "use strict";
 
-import {CATMAID} from "../namespace.js";
 import {CATMAID_LocalState, CATMAID_SimpleSetState} from "../state";
 import {CATMAID_makeCommand} from "../command";
 import {CATMAID_ValueError} from "../error";
 import {CATMAID_asEventSource} from "../events";
 import {CATMAID_fetch, CATMAID_requirePermission} from "../CATMAID";
-import * as project from "webpack/lib/Module";
+// project
 
 
 var Treenode = function(id, x, y, z, parentId, childIds, skeletonId, radius,

@@ -12,8 +12,7 @@
 import msgpack from "msgpack-lite";
 import $ from "jquery";
 
-import {CATMAID} from "./namespace.js";
-import {requestQueue} from "./CATMAID_js";
+import {requestQueue} from "./CATMAID.js";
 
 var InstanceRegistry = function() {
   this.instances = {};

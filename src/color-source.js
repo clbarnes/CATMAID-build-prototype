@@ -1,9 +1,8 @@
 
 import * as THREE from 'three';
 
-import {CATMAID} from "./namespace.js";
 import {CATMAID_ValueError} from "./error";
-import * as project from "webpack/lib/Module";
+// project
 import {CATMAID_fetch} from "./CATMAID";
 import {CATMAID_SkeletonSourceSubscription} from "./skeleton_source";
 import {CATMAID_BasicSkeletonSource} from "./basic_skeleton_source";
@@ -91,7 +90,7 @@ var SkeletonColorMode = {
           skeleton_ids: skeletonIds
         })
         .then(function(lengthData) {
-          let colorSteps = CATMAID_TracingOverlay.Settings.session.length_color_steps;
+          let colorSteps = CATMAID.TracingOverlay.Settings.session.length_color_steps;
           let lowerStop, upperStop;
           let sortedSteps = colorSteps.sort(function(a, b) {
             if (a.stop < b.stop) return -1;

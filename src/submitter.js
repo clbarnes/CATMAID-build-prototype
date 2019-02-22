@@ -8,7 +8,6 @@
 import {Promise} from "es6-promise";
 import $ from "jquery";
 
-import {CATMAID} from "./namespace.js";
 import {CATMAID_Error} from "./error";
 import {CATMAID_parseErrorResponse} from "./CATMAID";
 

@@ -7,7 +7,6 @@
 
 import * as numeric from "numeric";
 
-import {CATMAID} from "./namespace.js";
 
 /* Code from Stephan Saalfeld's mpicbg library at github.com:axtimwalde/mpicbg.git
  *

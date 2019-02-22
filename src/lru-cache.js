@@ -2,7 +2,6 @@
 /* vim: set softtabstop=2 shiftwidth=2 tabstop=2 expandtab: */
 "use strict";
 
-import {CATMAID} from "./namespace.js";
 import {CATMAID_PreConditionError} from "./error";
 import {CATMAID_asEventSource} from "./events";
 
