@@ -2,23 +2,10 @@
 /* vim: set softtabstop=2 shiftwidth=2 tabstop=2 expandtab: */
 "use strict";
 
-
-
-function makeConstant(namespace, name, value) {
-  Object.defineProperty(namespace, name, {
-    configurable: false,
-    enumerable: false,
-    value: undefined === value ? name : value,
-    writable: false
-  });
-}
-
-// Some logic operators
-makeConstant(CATMAID, "AND");
-makeConstant(CATMAID, "OR");
-makeConstant(CATMAID, "XOR");
-makeConstant(CATMAID, "NOT");
-makeConstant(CATMAID, "UNION");
-makeConstant(CATMAID, "INTERSECTION");
-makeConstant(CATMAID, "DIFFERENCE");
-
+export const CATMAID_AND = "AND";
+export const CATMAID_OR = "OR";
+export const CATMAID_XOR = "XOR";
+export const CATMAID_NOT = "NOT";
+export const CATMAID_UNION = "UNION";
+export const CATMAID_INTERSECTION = "INTERSECTION";
+export const CATMAID_DIFFERENCE = "DIFFERENCE";
