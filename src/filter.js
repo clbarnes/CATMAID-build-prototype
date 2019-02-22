@@ -13,7 +13,7 @@ import {fetchSkeletons} from "./utils";
 import * as CATMAID_tools from "./tools";
 import {CATMAID_UNION} from "./constants";
 
-// project, CATMAID_skeletonListSources
+// project, CATMAID.skeletonListSources
 
 
 /**
@@ -1416,7 +1416,7 @@ export let CATMAID_SkeletonFilterSettingFactories = {
     // Defaults
     options.relation = options.relation || 'post';
     // The skeleton source
-    var availableSources = CATMAID_skeletonListSources.getSourceNames();
+    var availableSources = CATMAID.skeletonListSources.getSourceNames();
     var sourceOptions = availableSources.reduce(function(o, name) {
       o[name] = name;
       return o;
@@ -1429,7 +1429,7 @@ export let CATMAID_SkeletonFilterSettingFactories = {
         function(e) {
           // Get models from source to store in option set
           var source = this.value && this.value !== "None" ?
-            CATMAID_skeletonListSources.getSource(this.value) : undefined;
+            CATMAID.skeletonListSources.getSource(this.value) : undefined;
 
           if (!source) {
             options.otherNeurons = null;
@@ -1650,7 +1650,7 @@ export let CATMAID_SkeletonFilterSettingFactories = {
     container.appendChild(intervalIdLabel);
   },
   'in-skeleton-source': function(container, options) {
-    var availableSources = CATMAID_skeletonListSources.getSourceNames();
+    var availableSources = CATMAID.skeletonListSources.getSourceNames();
     var sourceOptions = availableSources.reduce(function(o, name) {
       o[name] = name;
       return o;
@@ -1663,7 +1663,7 @@ export let CATMAID_SkeletonFilterSettingFactories = {
         function(e) {
           // Get models from source to store in option set
           var source = this.value && this.value !== "None" ?
-            CATMAID_skeletonListSources.getSource(this.value) : undefined;
+            CATMAID.skeletonListSources.getSource(this.value) : undefined;
 
           if (!source) {
             options.otherNeurons = null;

@@ -86,7 +86,7 @@ var fetchSkeletons = function(skeleton_ids, fnMakeURL, fnPost, fnLoadedOne,
       unloadable = [],
       fnMissing = function() {
         if (missing.length > 0 && confirm("Skeletons " + missing.join(', ') + " do not exist. Remove them from selections?")) {
-          CATMAID_skeletonListSources.removeSkeletons(missing);
+          CATMAID.skeletonListSources.removeSkeletons(missing);
         }
         if (unloadable.length > 0) {
           alert("Could not load skeletons: " + unloadable.join(', '));

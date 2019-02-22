@@ -298,7 +298,7 @@ CATMAID_ConvexHullVolume.prototype.updateTriangleMesh = function(onSuccess, onEr
   // If there is no neuron source, there is no point. Return an empty mesh
   // representation (no vertices, no faces).
   var source = this.neuronSourceName ?
-    CATMAID_skeletonListSources.getSource(this.neuronSourceName) : undefined;
+    CATMAID.skeletonListSources.getSource(this.neuronSourceName) : undefined;
 
   if (!source) {
     CATMAID_tools.callIfFn(onError, "No skeleton source defined");

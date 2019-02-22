@@ -66,12 +66,12 @@ SkeletonSource.prototype.EVENT_SUBSCRIPTION_REMOVED = "skeleton_source_subscript
 
 SkeletonSource.prototype.registerSource = function() {
   this.trigger(this.EVENT_SOURCE_ADDED, this);
-  CATMAID_skeletonListSources.add(this);
+  CATMAID.skeletonListSources.add(this);
 };
 
 SkeletonSource.prototype.unregisterSource = function() {
   this.trigger(this.EVENT_SOURCE_REMOVED, this);
-  CATMAID_skeletonListSources.remove(this);
+  CATMAID.skeletonListSources.remove(this);
   // Remove all subscriptions
   if (this.subscriptions) {
     this.subscriptions.forEach(function(s) {
@@ -247,7 +247,7 @@ SkeletonSource.prototype.loadSubscriptions = function(ignoreEmpty) {
  *                      dialogs. Defaults to false.
  */
 SkeletonSource.prototype.loadSource = function(silent) {
-  var models = CATMAID_skeletonListSources.getSelectedSkeletonModels(this);
+  var models = CATMAID.skeletonListSources.getSelectedSkeletonModels(this);
   var numModels = Object.keys(models).length;
   if (0 === numModels) {
     if (!silent) {
@@ -285,7 +285,7 @@ SkeletonSource.prototype.appendSkeletons = function(skids) {
  * Get a list of source skeleton IDs.
  */
 SkeletonSource.prototype.getSourceSkeletons = function(silent) {
-  var skeletons = CATMAID_skeletonListSources.getSelectedSkeletons(this, silent);
+  var skeletons = CATMAID.skeletonListSources.getSelectedSkeletons(this, silent);
   return skeletons;
 };
 
