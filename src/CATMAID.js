@@ -69,6 +69,7 @@ export let CATMAID_configure = function(backendURL, staticURL, staticExtURL,
   validateString(backendURL, "back-end URL");
   validateString(staticURL, "static URL");
   if (typeof staticExtURL === 'undefined') staticExtURL = '';
+  // todo: check these defineproperties
 
   Object.defineProperty(CATMAID, "backendURL", {
     enumerable: false,
