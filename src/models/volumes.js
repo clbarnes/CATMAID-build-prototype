@@ -6,8 +6,6 @@ import {CATMAID_asEventSource} from "../events";
 import {CATMAID_fetch} from "../CATMAID";
 // project
 import * as THREE from "three";
-import * as THREE from "three/src/math/Ray";
-import * as THREE from "three/src/math/Box3";
 
 
 /**
