@@ -111,6 +111,17 @@ export const CATMAID = module_objs.reduce((accumulator, currentValue) => {
 
 CATMAID.tools = tools;
 
+let singleton;
+
+Object.defineProperty(CATMAID, "skeletonListSources", {
+  get: () => {
+    if (!singleton) {
+      singleton = new skeleton_source_manager.CATMAID_SkeletonSourceManager();
+    }
+    return singleton;
+  }
+});
+
 import {Arbor} from "./Arbor.js";
 export {Arbor};
 
