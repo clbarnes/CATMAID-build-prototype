@@ -203,13 +203,13 @@ DataStore.prototype._storeDirty = function () {
   }, this);
 };
 
-CATMAID_DataStore = DataStore;
+export let CATMAID_DataStore = DataStore;
 
 /**
  * A manager for loading, retrieving and reloading DataStores. Most access
  * to stores should be through this manager's get method.
  */
-CATMAID_DataStoreManager = (function () {
+export let CATMAID_DataStoreManager = (function () {
   var datastores = new Map();
 
   return {

@@ -1,7 +1,7 @@
 
 import {CATMAID} from "./namespace.js";
 
-CATMAID_ShaderLib = {
+export let CATMAID_ShaderLib = {
 
   // Original by Mikola Lysenko. MIT License (c) 2014, from:
   // https://github.com/mikolalysenko/glsl-read-float/blob/master/index.glsl
@@ -49,6 +49,6 @@ CATMAID_ShaderLib = {
   ].join("\n")
 };
 
-CATMAID_insertSnippetIntoShader = function (shaderSource, insertionPoint, glsl) {
+export let CATMAID_insertSnippetIntoShader = function (shaderSource, insertionPoint, glsl) {
   return shaderSource.replace(insertionPoint.regex, glsl + insertionPoint.replacement);
 };

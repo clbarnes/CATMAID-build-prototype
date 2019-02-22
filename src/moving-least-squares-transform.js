@@ -1016,4 +1016,4 @@ transform.AffineModel3D = AffineModel3D;
 transform.RigidModel3D = RigidModel3D;
 transform.SimilarityModel3D = SimilarityModel3D;
 
-CATMAID_transform = transform;
+export let CATMAID_transform = transform;

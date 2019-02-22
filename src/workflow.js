@@ -96,5 +96,5 @@ WorkflowStep.isComplete = function(state) {
 
 
 // Export
-CATMAID_Workflow = Workflow;
-CATMAID_WorkflowStep = WorkflowStep;
+export let CATMAID_Workflow = Workflow;
+export let CATMAID_WorkflowStep = WorkflowStep;

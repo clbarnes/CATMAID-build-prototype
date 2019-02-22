@@ -225,12 +225,12 @@ Annotations.EVENT_ANNOTATIONS_DELETED = "annotations_deleted";
 CATMAID_asEventSource(Annotations);
 
 // Export annotation namespace
-CATMAID_Annotations = Annotations;
+export let CATMAID_Annotations = Annotations;
 
 /**
  * Wrap linking new and existing annotations to other class instances.
  */
-CATMAID_AddAnnotationsCommand = CATMAID_makeCommand(function(projectId,
+export let CATMAID_AddAnnotationsCommand = CATMAID_makeCommand(function(projectId,
       entityIds, skeletonIds, annotations, metaAnnotations) {
 
   var exec = function(done, command) {
@@ -275,7 +275,7 @@ CATMAID_AddAnnotationsCommand = CATMAID_makeCommand(function(projectId,
  * Remove annotations with this command. This can be undone if the execution
  * the initial execution had an actual removal as effect.
  */
-CATMAID_RemoveAnnotationsCommand = CATMAID_makeCommand(function(projectId,
+export let CATMAID_RemoveAnnotationsCommand = CATMAID_makeCommand(function(projectId,
       targetIds, annotationIds) {
 
   // Get current annotation id/mapping

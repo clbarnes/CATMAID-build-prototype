@@ -6,7 +6,7 @@ import * as THREE from 'three';
 import {CATMAID} from "./namespace.js";
 
 // Namespace declaration
-CATMAID_tools = CATMAID_tools || {};
+export let CATMAID_tools = CATMAID_tools || {};
 
 /**
  * Definition of methods in CATMAID_tools namespace.

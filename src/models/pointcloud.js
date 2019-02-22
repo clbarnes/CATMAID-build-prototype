@@ -154,5 +154,5 @@ CATMAID_asEventSource(Pointcloud);
 Pointcloud.EVENT_POINTCLOUD_ADDED = 'pointcloud_added';
 Pointcloud.EVENT_POINTCLOUD_DELETED = 'pointcloud_deleted';
 
-CATMAID_Pointcloud = Pointcloud;
+export let CATMAID_Pointcloud = Pointcloud;
 

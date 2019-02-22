@@ -54,7 +54,7 @@ var endsWith = function(str, suffix) {
  * @param {bool}   history        (Optional) Indicate if history tracking is
  *                                enabled in the back-end, default is true.
  */
-CATMAID_configure = function(backendURL, staticURL, staticExtURL,
+export let CATMAID_configure = function(backendURL, staticURL, staticExtURL,
     csrfCookieName, cookieSuffix, permissions, history) {
   validateString(backendURL, "back-end URL");
   validateString(staticURL, "static URL");
@@ -120,7 +120,7 @@ CATMAID_configure = function(backendURL, staticURL, staticExtURL,
  *                        slash is not required.
  * @returns {string} The complete CATMAID URL.
  */
-CATMAID_makeURL = function(path) {
+export let CATMAID_makeURL = function(path) {
   validateString(path, "relative path for URL creation");
   return CATMAID_backendURL + (startsWith(path, "/") ? path.substr(1) : path);
 };
@@ -132,7 +132,7 @@ CATMAID_makeURL = function(path) {
  *                        slash is not required.
  * @returns {string} The complete CATMAID URL.
  */
-CATMAID_makeStaticURL = function(path) {
+export let CATMAID_makeStaticURL = function(path) {
   validateString(path, "relative path for URL creation");
   return CATMAID_staticURL + (startsWith(path, "/") ? path.substr(1) : path);
 };
@@ -145,7 +145,7 @@ CATMAID_makeStaticURL = function(path) {
  *                        slash is not required.
  * @returns {string}    - The complete URL.
  */
-CATMAID_makeStaticExtensionURL = function(path) {
+export let CATMAID_makeStaticExtensionURL = function(path) {
   validateString(path, "relative path for URL creation");
   return CATMAID_staticExtensionURL +
     (startsWith(path, "/") ? path.substr(1) : path);
@@ -158,7 +158,7 @@ CATMAID_makeStaticExtensionURL = function(path) {
  *                        slash is not required.
  * @returns {string}    - The complete URL.
  */
-CATMAID_makeDocURL = function(path) {
+export let CATMAID_makeDocURL = function(path) {
   validateString(path, "relative path for URL creation");
   var version = CATMAID_getVersionRelease();
   return "http://catmaid.readthedocs.org/en/" + version + "/" +
@@ -170,7 +170,7 @@ CATMAID_makeDocURL = function(path) {
  *
  * @returns {string}    - The complete URL.
  */
-CATMAID_makeChangelogURL = function() {
+export let CATMAID_makeChangelogURL = function() {
   var version = CATMAID_getVersionRelease();
   if ('stable' === version) {
     return "https://github.com/catmaid/CATMAID/releases/latest";
@@ -188,7 +188,7 @@ CATMAID_makeChangelogURL = function() {
  * @returns                  The returned value or undefined if no value for
  *                           the passed in name is available.
  */
-CATMAID_getCookie = function(name, noSuffix) {
+export let CATMAID_getCookie = function(name, noSuffix) {
   var cookieValue = null;
   if (document.cookie && document.cookie !== '') {
 
@@ -218,7 +218,7 @@ CATMAID_getCookie = function(name, noSuffix) {
  * @param {Boolean} noSufifx Optional, disable automatic appending of
  *                           CATMAID's cookie suffix to the cookie name.
  */
-CATMAID_setCookie = function(name, value, days, noSuffix) {
+export let CATMAID_setCookie = function(name, value, days, noSuffix) {
   if (document.cookie && document.cookie !== '') {
     var maxAge = "";
     if (days) {
@@ -239,7 +239,7 @@ CATMAID_setCookie = function(name, value, days, noSuffix) {
  *
  * @return {string} The release version, or "stable" if none could be guessed.
  */
-CATMAID_getVersionRelease = function () {
+export let CATMAID_getVersionRelease = function () {
   var version = CATMAID_CLIENT_VERSION.split('-')[0];
   if (version.length === 0 || version.split('.').length !== 3)
     version = "stable";
@@ -250,7 +250,7 @@ CATMAID_getVersionRelease = function () {
  * Setup CSRF protection on AJAX requests made through requestQueue or
  * jQuery's ajax method.
  */
-CATMAID_setupCsrfProtection = function () {
+export let CATMAID_setupCsrfProtection = function () {
   var csrfCookie = CATMAID_csrfCookieName ?
       CATMAID_getCookie(CATMAID_csrfCookieName, true) :
       undefined;
@@ -280,7 +280,7 @@ var groups = [];
  *
  * @returns Promise that is resolved after permissions have been updated.
  */
-CATMAID_updatePermissions = function(permissions) {
+export let CATMAID_updatePermissions = function(permissions) {
   if (permissions) {
     projectPermissions = {};
     for (var p in permissions) {
@@ -306,14 +306,14 @@ CATMAID_updatePermissions = function(permissions) {
  *
  * @param {String} username The username of the user in question.
  */
-CATMAID_hasPermissionOnUser = function(username) {
+export let CATMAID_hasPermissionOnUser = function(username) {
   return groups.indexOf(username) != -1;
 };
 
 /**
  * Check if the passed in response information seems valid and without errors.
  */
-CATMAID_validateResponse = function(status, text, xml, responseType) {
+export let CATMAID_validateResponse = function(status, text, xml, responseType) {
   var isTextResponse = !responseType || responseType === '' || responseType === 'text';
   if (status >= 200 && status <= 204 &&
       (!isTextResponse || typeof text === 'string' || text instanceof String)) {
@@ -337,7 +337,7 @@ CATMAID_validateResponse = function(status, text, xml, responseType) {
  *
  * @returns {Object} parsed resonse text
  */
-CATMAID_validateJsonResponse = function(status, text, xml) {
+export let CATMAID_validateJsonResponse = function(status, text, xml) {
   var response = CATMAID_validateResponse(status, text, xml);
   // `text` may be empty for no content responses.
   var json = text.length ? JSON.parse(text) : {};
@@ -352,7 +352,7 @@ CATMAID_validateJsonResponse = function(status, text, xml) {
 /**
  * Translate an error response into the appropriate front-end type.
  */
-CATMAID_parseErrorResponse = function(error) {
+export let CATMAID_parseErrorResponse = function(error) {
   if ('ValueError' === error.type) {
     return new CATMAID_ValueError(error.error, error.detail);
   } else if ('StateMatchingError' === error.type) {
@@ -389,7 +389,7 @@ CATMAID_parseErrorResponse = function(error) {
  * @param {API}     api     (Optional) An API that should be contacted instead
  *                          of the current environment.
  */
-CATMAID_fetch = function(relativeURL, method, data, raw, id, replace,
+export let CATMAID_fetch = function(relativeURL, method, data, raw, id, replace,
     responseType, headers, parallel, details, api) {
   // Alternatively, accept a single argument that provides all parameters as
   // fields.
@@ -472,7 +472,7 @@ CATMAID_fetch = function(relativeURL, method, data, raw, id, replace,
  * @param {String} name  The name of the new header field
  * @param {String} value The value of the new header field
  */
-CATMAID_addHeaderToRequests = function(name, value) {
+export let CATMAID_addHeaderToRequests = function(name, value) {
   requestQueue.addHeader(name, value);
 };
 
@@ -482,7 +482,7 @@ CATMAID_addHeaderToRequests = function(name, value) {
  *
  * @param {String} name  The name of the header field to remove
  */
-CATMAID_removeHeaderFromRequests = function(name) {
+export let CATMAID_removeHeaderFromRequests = function(name) {
   requestQueue.removeHeader(name);
 };
 
@@ -496,7 +496,7 @@ CATMAID_removeHeaderFromRequests = function(name) {
  * @returns True if the permission is given for the passed in project or if
  *          permission checks are disabled. False otherwise.
  */
-CATMAID_hasPermission = function(projectId, permission) {
+export let CATMAID_hasPermission = function(projectId, permission) {
   if (null === projectPermissions) {
     return false;
   }
@@ -524,7 +524,7 @@ var permissionErrorMessages = {
  * @returns True, if a permission check was performed. False otherwise (e.g.
  *          when permission checks are disabled)
  */
-CATMAID_requirePermission = function(projectId, permission, msg) {
+export let CATMAID_requirePermission = function(projectId, permission, msg) {
   if (!CATMAID_hasPermission) {
     msg = msg || permissionErrorMessages[permission] || ('Permission "' +
         permission + '" is not given for project "' + projectId + '"');
@@ -535,13 +535,13 @@ CATMAID_requirePermission = function(projectId, permission, msg) {
 /**
  * A general noop function.
  */
-CATMAID_noop = function() {};
+export let CATMAID_noop = function() {};
 
 /**
  * A function call wrapper that will one particular field of a target object
  * during a function call and resets it afterwards.
  */
-CATMAID_with = function(target, field, value, isPromise, fn, resetValue) {
+export let CATMAID_with = function(target, field, value, isPromise, fn, resetValue) {
   var originalValue = 5 === arguments.length ? target[field] : resetValue;
   target[field] = value;
   var result = fn();
@@ -564,7 +564,7 @@ CATMAID_with = function(target, field, value, isPromise, fn, resetValue) {
  * Test if <key> is available in <options> and return if this is the case,
  * otherwise return <default>.
  */
-CATMAID_getOption = function(options, key, defaultValue) {
+export let CATMAID_getOption = function(options, key, defaultValue) {
   return options.hasOwnProperty(key) ? options[key] : defaultValue;
 };
 
@@ -572,7 +572,7 @@ CATMAID_getOption = function(options, key, defaultValue) {
  * Test if <files> is a valid source of a single file name with the passed in
  * extension.
  */
-CATMAID_containsSingleValidFile = function(files, extension) {
+export let CATMAID_containsSingleValidFile = function(files, extension) {
     if (0 === files.length) {
       CATMAID_error("Choose at least one file!");
       return false;
@@ -600,7 +600,7 @@ CATMAID_containsSingleValidFile = function(files, extension) {
 /**
  * Return a function to perform text matching, either as substring or as a regular expression when the text starts with a '/'. Returns null if the text is not suitable.
  */
-CATMAID_createTextMatchingFunction = function(text) {
+export let CATMAID_createTextMatchingFunction = function(text) {
   text = text.trim();
   if (!text) {
     CATMAID_msg("Select by regular expression", "No text.");
@@ -626,7 +626,7 @@ CATMAID_createTextMatchingFunction = function(text) {
  * otherwise. This is done directly with AJAX to be independent from own
  * request/response implementations.
  */
-CATMAID_testNetworkAccess = function() {
+export let CATMAID_testNetworkAccess = function() {
   var url = CATMAID_makeURL('version');
   return new Promise(function(resolve, reject) {
     var xhr = new XMLHttpRequest();
@@ -652,7 +652,7 @@ CATMAID_testNetworkAccess = function() {
  * Merge source fields into key if they appear in defaults, if a default does
  * not exist in the source, set it optionally to the default.
  */
-CATMAID_mergeOptions = function(target, source, defaults, setDefaults) {
+export let CATMAID_mergeOptions = function(target, source, defaults, setDefaults) {
   // Only allow options that are defined in the default option list
   for (var key in defaults) {
     if (source.hasOwnProperty(key)) {

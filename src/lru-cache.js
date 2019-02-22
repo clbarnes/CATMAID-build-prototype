@@ -204,7 +204,7 @@ MemoryAwareLRUCache.prototype.set = function(key, value, valueSize) {
 /**
  * Create cache instances with fallback options.
  */
-CATMAID_CacheBuilder = {
+export let CATMAID_CacheBuilder = {
   makeMemoryAwareLRUCache: function(capacity, lifetime, maxMemoryFillRate, fallback) {
     let cache;
     try {
@@ -219,5 +219,5 @@ CATMAID_CacheBuilder = {
 };
 
 
-CATMAID_LRUCache = LRUCache;
-CATMAID_MemoryAwareLRUCache = MemoryAwareLRUCache;
+export let CATMAID_LRUCache = LRUCache;
+export let CATMAID_MemoryAwareLRUCache = MemoryAwareLRUCache;

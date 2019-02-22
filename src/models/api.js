@@ -41,4 +41,4 @@ API.fromSetting = function(setting) {
       setting.http_auth_user, setting.http_auth_pass);
 };
 
-CATMAID_API = API;
+export let CATMAID_API = API;

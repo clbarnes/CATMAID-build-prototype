@@ -805,4 +805,4 @@ SVGUtil.insertMultiLinePlot = function(container, containerID, plot_id, lines, x
 };
 
 // Export SVG utility functions in CATMAID_svgutil sub-namespace
-CATMAID_svgutil = SVGUtil;
+export let CATMAID_svgutil = SVGUtil;

@@ -820,5 +820,5 @@ Landmarks.EVENT_DISPLAY_TRANSFORM_REMOVED = "display_transform_removed";
 CATMAID_asEventSource(Landmarks);
 
 // Export namespace
-CATMAID_Landmarks = Landmarks;
-CATMAID_LandmarkSkeletonTransformation = LandmarkSkeletonTransformation;
+export let CATMAID_Landmarks = Landmarks;
+export let CATMAID_LandmarkSkeletonTransformation = LandmarkSkeletonTransformation;

@@ -16,7 +16,7 @@ import {CATMAID} from "./namespace.js";
  * (used e.g. for node creation). Then there is also NoCheckState, which
  * causes the back-end to disable state checking for a request.
  */
-CATMAID_State = {};
+export let CATMAID_State = {};
 CATMAID_asEventSource(CATMAID_State);
 CATMAID_State.EVENT_STATE_NEEDS_UPDATE = "state_needs_update";
 
@@ -37,7 +37,7 @@ CATMAID_State.EVENT_STATE_NEEDS_UPDATE = "state_needs_update";
  *   c_links: ((<link_id>, <link_edition_time>), ...)
  * }
  */
-CATMAID_getNeighborhoodState = function(nodeId, editionTime, parentId, parentEditTime,
+export let CATMAID_getNeighborhoodState = function(nodeId, editionTime, parentId, parentEditTime,
     children, links, cLinks) {
   var state = {};
   if (editionTime) {
@@ -62,7 +62,7 @@ CATMAID_getNeighborhoodState = function(nodeId, editionTime, parentId, parentEdi
  * A state representation for new nodes. Currently it contains only the
  * edition time, because the node ID is expected to be sent along with a state
  */
-CATMAID_getNodeState = function(nodeId, editionTime) {
+export let CATMAID_getNodeState = function(nodeId, editionTime) {
   var state = {
     "edition_time": editionTime
   };
@@ -72,7 +72,7 @@ CATMAID_getNodeState = function(nodeId, editionTime) {
 /**
  * A state representation for new multiple nodes.
  */
-CATMAID_getMultiNodeState = function(editionTimes) {
+export let CATMAID_getMultiNodeState = function(editionTimes) {
   var state = [];
   for (var nodeId in editionTimes) {
     state.push([nodeId, editionTimes[nodeId]]);
@@ -83,7 +83,7 @@ CATMAID_getMultiNodeState = function(editionTimes) {
 /**
  * A state representation for new nodes.
  */
-CATMAID_getParentState = function(parentId, parentEditTime) {
+export let CATMAID_getParentState = function(parentId, parentEditTime) {
   var state = {
     // Make sure root nodes get represented properly
     "parent": [parentId || -1, parentEditTime || ""]
@@ -94,7 +94,7 @@ CATMAID_getParentState = function(parentId, parentEditTime) {
 /**
  * A state to represent parent and child edition time.
  */
-CATMAID_getEdgeState = function(parentId, parentEditTime, childId, childEditTime) {
+export let CATMAID_getEdgeState = function(parentId, parentEditTime, childId, childEditTime) {
   var state = {
     "edition_time": parentEditTime,
     "children": [[childId, childEditTime]]
@@ -105,7 +105,7 @@ CATMAID_getEdgeState = function(parentId, parentEditTime, childId, childEditTime
 /**
  * A dummy state that causes the back-end to not do state checks.
  */
-CATMAID_getNoCheckState = function() {
+export let CATMAID_getNoCheckState = function() {
   var state = {
     "nocheck": true
   };
@@ -113,7 +113,7 @@ CATMAID_getNoCheckState = function() {
 };
 
 var testNoCheckState = CATMAID_getNoCheckState();
-CATMAID_isNoCheckState = function(state) {
+export let CATMAID_isNoCheckState = function(state) {
   return testNoCheckState == state;
 };
 
@@ -255,7 +255,7 @@ GenericState.prototype.makeNeighborhoodState = function(nodeId, isConnector) {
   }
 };
 
-CATMAID_GenericState = GenericState;
+export let CATMAID_GenericState = GenericState;
 
 /**
  * This state type doesn't know about parent/child relations, but only maps
@@ -280,7 +280,7 @@ SimpleSetState.prototype.getNode = function(nodeId) {
   return node;
 };
 
-CATMAID_SimpleSetState = SimpleSetState;
+export let CATMAID_SimpleSetState = SimpleSetState;
 
 /**
  * This state represents only a local node centered part. If passed in, node
@@ -361,7 +361,7 @@ LocalState.prototype.getLinks = function(nodeId) {
 };
 
 // Export local state
-CATMAID_LocalState = LocalState;
+export let CATMAID_LocalState = LocalState;
 
 // A function to return undefined, just to be explicit.
 function returnUndefined() {}
@@ -384,4 +384,4 @@ NoCheckState.prototype.makeNeighborhoodState = CATMAID_getNoCheckState;
 NoCheckState.prototype.makeLocalState = CATMAID_getNoCheckState;
 
 // Export no-check state
-CATMAID_NoCheckState = NoCheckState;
+export let CATMAID_NoCheckState = NoCheckState;

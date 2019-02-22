@@ -208,4 +208,4 @@ ArborParser.prototype.collapseArtifactualBranches = function(tags) {
 };
 
 // Make ArborParser available in CATMAID namespace
-CATMAID_ArborParser = ArborParser;
+export let CATMAID_ArborParser = ArborParser;

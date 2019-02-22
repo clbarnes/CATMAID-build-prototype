@@ -518,6 +518,6 @@ SubscriptionError.prototype = Object.create(CATMAID_Error.prototype);
 SubscriptionError.prototype.constructor = CATMAID_SubscriptionError;
 
 // Make skeleton source and subscription available in CATMAID namespace
-CATMAID_SkeletonSource = SkeletonSource;
-CATMAID_SkeletonSourceSubscription = SkeletonSourceSubscription;
-CATMAID_SubscriptionError = SubscriptionError;
+export let CATMAID_SkeletonSource = SkeletonSource;
+export let CATMAID_SkeletonSourceSubscription = SkeletonSourceSubscription;
+export let CATMAID_SubscriptionError = SubscriptionError;

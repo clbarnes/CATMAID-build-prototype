@@ -3,7 +3,7 @@
 import {CATMAID} from "./namespace.js";
 
 
-CATMAID_CoalescingPromiseDeduplicator = class CoalescingPromiseDeduplicator {
+export let CATMAID_CoalescingPromiseDeduplicator = class CoalescingPromiseDeduplicator {
   constructor() {
     this._pending = new Map();
   }

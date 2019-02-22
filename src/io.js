@@ -18,7 +18,7 @@ import {CATMAID} from "./namespace.js";
  *                                    No filtering is done by default.
  * @returns {Promise} Promise resolving in all read lines.
  */
-CATMAID_parseCSVFile = function(file, delimiter, nLinesToSkip, filter) {
+export let CATMAID_parseCSVFile = function(file, delimiter, nLinesToSkip, filter) {
   delimiter = delimiter || ',';
   return new Promise(function(resolve, reject) {
     let reader = new FileReader();

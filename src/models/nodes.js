@@ -20,7 +20,7 @@ var Treenode = function(id, x, y, z, parentId, childIds, skeletonId, radius,
   this.editionTime = editionTime;
 };
 
-CATMAID_Treenode = Treenode;
+export let CATMAID_Treenode = Treenode;
 
 /**
  * This namespace provides functions to work with annotations on neurons. All
@@ -413,9 +413,9 @@ Nodes.EVENT_NODE_DELETED = "node_deleted";
 CATMAID_asEventSource(Nodes);
 
 // Export nodes
-CATMAID_Nodes = Nodes;
+export let CATMAID_Nodes = Nodes;
 
-CATMAID_UpdateNodeRadiusCommand = CATMAID_makeCommand(function(
+export let CATMAID_UpdateNodeRadiusCommand = CATMAID_makeCommand(function(
       state, projectId, nodeId, radius, updateMode) {
 
   var umNode = state.getNode(nodeId);
@@ -510,7 +510,7 @@ CATMAID_UpdateNodeRadiusCommand = CATMAID_makeCommand(function(
   this.init(info, exec, undo);
 });
 
-CATMAID_UpdateConfidenceCommand = CATMAID_makeCommand(function(
+export let CATMAID_UpdateConfidenceCommand = CATMAID_makeCommand(function(
       state, projectId, nodeId, newConfidence, toConnector) {
 
   var umNode = state.getNode(nodeId);
@@ -631,7 +631,7 @@ CATMAID_UpdateConfidenceCommand = CATMAID_makeCommand(function(
  * @param {integer} projectId Project the node to remove is part of
  * @param {integer} nodeId    The node to remove
  */
-CATMAID_RemoveNodeCommand = CATMAID_makeCommand(function(
+export let CATMAID_RemoveNodeCommand = CATMAID_makeCommand(function(
       state, projectId, nodeId) {
 
   // Use passed in state only to extract parent ID and edit time. A new state
@@ -787,7 +787,7 @@ CATMAID_RemoveNodeCommand = CATMAID_makeCommand(function(
  *
  * @returns a promise that is resolved once the treenode is created
  */
-CATMAID_CreateNodeCommand = CATMAID_makeCommand(function(
+export let CATMAID_CreateNodeCommand = CATMAID_makeCommand(function(
       state, projectId, x, y, z, parentId, radius, confidence, useNeuron, neuronName) {
 
   // Use passed in state only to extract parent ID and edit time. A new state
@@ -870,7 +870,7 @@ CATMAID_CreateNodeCommand = CATMAID_makeCommand(function(
  *
  * @returns a promise that is resolved once the treenode is created
  */
-CATMAID_InsertNodeCommand = CATMAID_makeCommand(function(
+export let CATMAID_InsertNodeCommand = CATMAID_makeCommand(function(
     state, projectId, x, y, z, parentId, childId, radius, confidence, useNeuron) {
 
   var umParent = state.getNode(parentId) || [null, null];
@@ -979,7 +979,7 @@ function mapNodeUpdateList(state, type, map, command, node) {
 /**
  * Update one or more treenodes and connectors.
  */
-CATMAID_UpdateNodesCommand = CATMAID_makeCommand(
+export let CATMAID_UpdateNodesCommand = CATMAID_makeCommand(
     function(state, projectId, treenodes, connectors) {
   // Expect each treenode to be an array where the first element is the
   // treenode ID. Map to nodes from state. and create array of the following

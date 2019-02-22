@@ -34,7 +34,7 @@ import {CATMAID} from "./namespace.js";
  * An optional fourth argument specifies whether the UI has to be blocked. An
  * optional fifth argument specifies calls with replace rather than register.
  */
-CATMAID_submitterFn = function() {
+export let CATMAID_submitterFn = function() {
   // Accumulate invocations
   var queue = [];
   // Store last result

@@ -65,4 +65,4 @@ var DataViews = {
 };
 
 // Export data views
-CATMAID_DataViews = DataViews;
+export let CATMAID_DataViews = DataViews;

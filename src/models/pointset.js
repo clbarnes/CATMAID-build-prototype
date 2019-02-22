@@ -52,5 +52,5 @@ Pointset.get = function(projectId, pointsetId, withPoints) {
   });
 };
 
-CATMAID_Pointset = Pointset;
+export let CATMAID_Pointset = Pointset;
 

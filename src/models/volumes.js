@@ -275,4 +275,4 @@ CATMAID_asEventSource(Volumes);
 Volumes.EVENT_VOLUME_ADDED = "volume_added";
 
 // Export voume namespace into CATMAID namespace
-CATMAID_Volumes = Volumes;
+export let CATMAID_Volumes = Volumes;

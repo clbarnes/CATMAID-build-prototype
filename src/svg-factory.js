@@ -587,4 +587,4 @@ SVGFactory.prototype.save = function(filename) {
   saveAs(blob, filename);
 };
 
-CATMAID_SVGFactory = SVGFactory;
+export let CATMAID_SVGFactory = SVGFactory;

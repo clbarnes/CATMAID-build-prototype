@@ -12,7 +12,7 @@ import {CATMAID} from "./namespace.js";
  * can happeen based on a universal match, a meta annotation or the creator
  * ID.
  */
-CATMAID_SkeletonNodeMatcher = function() {
+export let CATMAID_SkeletonNodeMatcher = function() {
 
   this.state = {
     metaAnnotationName: null,

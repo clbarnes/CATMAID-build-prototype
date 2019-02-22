@@ -424,7 +424,7 @@ Skeletons.EVENT_SKELETON_REROOTED = "skeleton_rerooted";
 CATMAID_asEventSource(Skeletons);
 
 // Export Skeleton namespace
-CATMAID_Skeletons = Skeletons;
+export let CATMAID_Skeletons = Skeletons;
 
 /**
  * A command that wraps splitting skeletons. For now, it will block undo.
@@ -437,7 +437,7 @@ CATMAID_Skeletons = Skeletons;
  * @param {object}  upstream_annot_map Map of annotation names vs annotator
  *                                     IDs for the downstream split part.
  */
-CATMAID_SplitSkeletonCommand = CATMAID_makeCommand(
+export let CATMAID_SplitSkeletonCommand = CATMAID_makeCommand(
     function(state, projectId, treenodeId, upstream_annot_map, downstream_annot_map) {
 
   var exec = function(done, command, map) {
@@ -472,7 +472,7 @@ CATMAID_SplitSkeletonCommand = CATMAID_makeCommand(
    *                                  is needed. Either "create-intervals",
    *                                  "branch", "domain-end" or "new-domain".
  */
-CATMAID_JoinSkeletonsCommand = CATMAID_makeCommand(
+export let CATMAID_JoinSkeletonsCommand = CATMAID_makeCommand(
     function(state, projectId, fromId, toId, annotationSet, samplerHandling) {
 
   var exec = function(done, command, map) {
@@ -500,7 +500,7 @@ CATMAID_JoinSkeletonsCommand = CATMAID_makeCommand(
  * @param {integer} projectID  The project space to work in
  * @param {integer} treenodeID Treenode to reroot skeleton at
  */
-CATMAID_RerootSkeletonCommand = CATMAID_makeCommand(
+export let CATMAID_RerootSkeletonCommand = CATMAID_makeCommand(
     function(state, projectID, treenodeID) {
 
   var exec = function(done, command, map) {

@@ -341,7 +341,7 @@ CommandHistory.prototype.currentEntry = function() {
  * A static command factory to simplify creation of new command types. It
  * basically implements prototype inheritance.
  */
-CATMAID_makeCommand = function(cmd) {
+export let CATMAID_makeCommand = function(cmd) {
   cmd.prototype = Object.create(CATMAID_Command.prototype);
   cmd.prototype.constructor = cmd;
   return cmd;
@@ -468,6 +468,6 @@ var globalMap = new CommandStore();
 
 
 // Export command, history and ID map
-CATMAID_Command = Command;
-CATMAID_CommandHistory = CommandHistory;
-CATMAID_CommandStore = CommandStore;
+export let CATMAID_Command = Command;
+export let CATMAID_CommandHistory = CommandHistory;
+export let CATMAID_CommandStore = CommandStore;

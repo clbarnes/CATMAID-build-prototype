@@ -64,10 +64,10 @@ var Colorizer = function() {
 };
 
 // Export colorizer mixin
-CATMAID_asColorizer = function(obj) {
+export let CATMAID_asColorizer = function(obj) {
   Colorizer.call(obj);
 };
 
-CATMAID_Colorizer = function() {
+export let CATMAID_Colorizer = function() {
   CATMAID_asColorizer(this);
 };

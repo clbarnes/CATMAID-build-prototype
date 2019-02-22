@@ -8,7 +8,7 @@ import {CATMAID} from "./namespace.js";
 /**
  * A minimal JSON serializer.
  */
-CATMAID_JsonSerializer = function() {};
+export let CATMAID_JsonSerializer = function() {};
 
 CATMAID_JsonSerializer.prototype.serialize = function(state) {
   return JSON.stringify(state);

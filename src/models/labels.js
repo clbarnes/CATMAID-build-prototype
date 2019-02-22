@@ -114,14 +114,14 @@ Labels.EVENT_NODE_LABELS_CHANGED = "node_labels_changed";
 CATMAID_asEventSource(Labels);
 
 // Export labels namespace into CATMAID namespace
-CATMAID_Labels = Labels;
+export let CATMAID_Labels = Labels;
 
 /**
  * Add a tag to the active treenode. If undo is called the tag set is
  * restored that existed for this node just before the new tag was added.
  * This information will only be acquired if the command is executed.
  */
-CATMAID_AddTagsToNodeCommand = CATMAID_makeCommand(function(projectId, nodeId, nodeType,
+export let CATMAID_AddTagsToNodeCommand = CATMAID_makeCommand(function(projectId, nodeId, nodeType,
       tags, deleteExisting) {
 
   var exec = function(done, command) {
@@ -167,7 +167,7 @@ CATMAID_AddTagsToNodeCommand = CATMAID_makeCommand(function(projectId, nodeId, n
  * This command will remove a tag from a particular neuron. If the tag was
  * actually removed, its undo() method will re-add the tag.
  */
-CATMAID_RemoveTagFromNodeCommand = CATMAID_makeCommand(function(projectId, nodeId,
+export let CATMAID_RemoveTagFromNodeCommand = CATMAID_makeCommand(function(projectId, nodeId,
       nodeType, tag) {
 
   var exec = function(done, command) {

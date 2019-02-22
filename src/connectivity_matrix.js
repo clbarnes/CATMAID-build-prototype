@@ -255,5 +255,5 @@ function parseList(l) {
 }
 
 // Make connectivity matrix available in CATMAID namespace
-CATMAID_ConnectivityMatrix = ConnectivityMatrix;
+export let CATMAID_ConnectivityMatrix = ConnectivityMatrix;
 

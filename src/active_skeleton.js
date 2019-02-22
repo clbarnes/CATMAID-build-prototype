@@ -90,4 +90,4 @@ ActiveSkeleton.prototype._handleActiveNodeChange = function(node, skeletonChange
 };
 
 // Make ActiveSkeleton available in CATMAID namespace
-CATMAID_ActiveSkeleton = ActiveSkeleton;
+export let CATMAID_ActiveSkeleton = ActiveSkeleton;

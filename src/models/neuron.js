@@ -63,12 +63,12 @@ Neurons.EVENT_NEURON_DELETED = "neuron_deleted";
 CATMAID_asEventSource(Neurons);
 
 // Export Neuron namespace
-CATMAID_Neurons = Neurons;
+export let CATMAID_Neurons = Neurons;
 
 /**
  * Rename a neuron through a command.
  */
-CATMAID_RenameNeuronCommand = CATMAID_makeCommand(function(projectId, neuronId, newName) {
+export let CATMAID_RenameNeuronCommand = CATMAID_makeCommand(function(projectId, neuronId, newName) {
   var exec = function(done, command) {
     var rename = CATMAID_Neurons.rename(projectId, neuronId, newName);
 

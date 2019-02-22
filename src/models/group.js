@@ -20,4 +20,4 @@ Group.list = function(memberId) {
 };
 
 // Export into namespace
-CATMAID_Group = Group;
+export let CATMAID_Group = Group;

@@ -1082,5 +1082,5 @@ Sampling.EVENT_SAMPLER_UPDATED = 'sampler_updated';
 
 
 // Export into CATMAID namespace
-CATMAID_Sampling = Sampling;
+export let CATMAID_Sampling = Sampling;
 

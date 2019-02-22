@@ -341,4 +341,4 @@ Settings.prototype.setOverridable = function (key, overridable, scope) {
       });
 };
 
-CATMAID_Settings = Settings;
+export let CATMAID_Settings = Settings;

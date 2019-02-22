@@ -37,4 +37,4 @@ var Relations = {
 };
 
 // Export
-CATMAID_Relations = Relations;
+export let CATMAID_Relations = Relations;

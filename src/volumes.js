@@ -11,7 +11,7 @@ import {Promise} from "es6-promise";
 import {CATMAID} from "./namespace.js";
 
 
-CATMAID_Volume = function(options) {
+export let CATMAID_Volume = function(options) {
   options = options || {};
   this.id = options.id || null;
   this.project_id = options.project_id || null;
@@ -71,7 +71,7 @@ CATMAID_Volume.prototype.save = function() {
 /**
  * A box volume is a simple axis aligned box in project space.
  */
-CATMAID_BoxVolume = function(options) {
+export let CATMAID_BoxVolume = function(options) {
   options = options || {};
   CATMAID_Volume.call(this, options);
   this.set("minX", options.minX || 0);
@@ -237,7 +237,7 @@ CATMAID_BoxVolume.prototype.serialize = function() {
  * it is stored on the back-end as triangle mesh. Currently the generating
  * rules are not not stored along with them.
  */
-CATMAID_ConvexHullVolume = function(options) {
+export let CATMAID_ConvexHullVolume = function(options) {
   options = options || {};
   CATMAID_Volume.call(this, options);
   this.set("id", CATMAID_tools.getDefined(options.id, null));
@@ -498,7 +498,7 @@ CATMAID_ConvexHullVolume.prototype.serialize = function() {
  *  https://github.com/mikolalysenko/alpha-shape
  *  https://en.wikipedia.org/wiki/Alpha_shape
  */
-CATMAID_AlphaShapeVolume = function(options) {
+export let CATMAID_AlphaShapeVolume = function(options) {
   // Preview is by default disabled for alpha shapes, they can take longer to
   // compute.
   options = options || {};
@@ -609,7 +609,7 @@ CATMAID_AlphaShapeVolume.prototype.createMesh = function(points) {
  * the passed in points. Test checks squared distance between each point and the
  * sphere center, if it is equal/smaller radius, true is returned. False otherwise.
  */
-CATMAID_sphereIsEmpty = function(center, radiusSq, points) {
+export let CATMAID_sphereIsEmpty = function(center, radiusSq, points) {
   radiusSq -= 0.0001; // Allow points on surface
   var abs = Math.abs;
   var d = center.length;
@@ -640,7 +640,7 @@ function indexToContent(i) {
  *
  * @param {integer} minD Minimum simplex order for which to provide intervals
  */
-CATMAID_alphaIntervalComplex = function(points, minD) {
+export let CATMAID_alphaIntervalComplex = function(points, minD) {
   var util = GeometryTools.simplicialComplex;
   var circumradius = GeometryTools.circumradius;
   var circumcenter = GeometryTools.circumcenter;

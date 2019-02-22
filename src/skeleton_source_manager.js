@@ -635,7 +635,7 @@ SkeletonSourceManager.EVENT_SOURCE_ADDED = "skeleton_source_added";
 SkeletonSourceManager.EVENT_SOURCE_REMOVED = "skeleton_source_removed";
 
 // Make source manager available in CATMAID namespace
-CATMAID_SkeletonSourceManager = SkeletonSourceManager;
+export let CATMAID_SkeletonSourceManager = SkeletonSourceManager;
 
 // Create a default instance within the CATMAID namespace
 var singleton;

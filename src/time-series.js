@@ -429,4 +429,4 @@ TimeSeries.getArborBeforePointInTime = function(nodeHistory, connectorHistory,
 
 
 // Export module
-CATMAID_TimeSeries = TimeSeries;
+export let CATMAID_TimeSeries = TimeSeries;

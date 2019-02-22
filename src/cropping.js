@@ -22,7 +22,7 @@ import {CATMAID} from "./namespace.js";
  *
  * @return Promise which will resolve and reject with a response objcet
  */
-CATMAID_crop = function(projectId, stackIds, minX, minY, minZ, maxX, maxY,
+export let CATMAID_crop = function(projectId, stackIds, minX, minY, minZ, maxX, maxY,
     maxZ, zoomLevel, rotationZ, rgbStacks) {
   return CATMAID_fetch(projectId + '/crop', 'POST', {
     stack_ids: stackIds,

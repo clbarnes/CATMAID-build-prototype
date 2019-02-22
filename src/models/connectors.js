@@ -25,7 +25,7 @@ var ConnectorModel = function(id, x, y, z, links, confidence, creatorId,
   this.subtype = subtype;
 };
 
-CATMAID_ConnectorModel = ConnectorModel;
+export let CATMAID_ConnectorModel = ConnectorModel;
 
 
 /**
@@ -394,7 +394,7 @@ Connectors.relationToSubtype = function(relationName) {
 
 
 // Export connector namespace
-CATMAID_Connectors = Connectors;
+export let CATMAID_Connectors = Connectors;
 
 /**
  * Create a new connector with this command. Can be undone.
@@ -407,7 +407,7 @@ CATMAID_Connectors = Connectors;
  * @param {integer} subtype    (Optional) A connector subtype
  *
  */
-CATMAID_CreateConnectorCommand = CATMAID_makeCommand(
+export let CATMAID_CreateConnectorCommand = CATMAID_makeCommand(
     function(projectId, x, y, z, confidence, subtype) {
 
   // First execution will set the original connector node that all mappings
@@ -457,7 +457,7 @@ CATMAID_CreateConnectorCommand = CATMAID_makeCommand(
 /**
  * Delete a connector with this command. Can be undone.
  */
-CATMAID_RemoveConnectorCommand = CATMAID_makeCommand(
+export let CATMAID_RemoveConnectorCommand = CATMAID_makeCommand(
     function(state, projectId, connectorId) {
 
   // Use passed in state only to extract connector and and link states. A new
@@ -560,7 +560,7 @@ CATMAID_RemoveConnectorCommand = CATMAID_makeCommand(
   this.init(title, exec, undo);
 });
 
-CATMAID_LinkConnectorCommand = CATMAID_makeCommand(
+export let CATMAID_LinkConnectorCommand = CATMAID_makeCommand(
     function(state, projectId, connectorId, nodeId, linkType) {
 
   var umNode = state.getNode(nodeId);
@@ -607,7 +607,7 @@ CATMAID_LinkConnectorCommand = CATMAID_makeCommand(
   this.init(title, exec, undo);
 });
 
-CATMAID_UnlinkConnectorCommand = CATMAID_makeCommand(
+export let CATMAID_UnlinkConnectorCommand = CATMAID_makeCommand(
     function(state, projectId, connectorId, nodeId) {
 
   var umNode = state.getNode(nodeId);

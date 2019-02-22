@@ -150,7 +150,7 @@ var EventSource = function() {
 
 // Make event source available in CATMAID namespace and add a mixin version of
 // it.
-CATMAID_EventSource = EventSource;
-CATMAID_asEventSource = function(obj) {
+export let CATMAID_EventSource = EventSource;
+export let CATMAID_asEventSource = function(obj) {
   return CATMAID_EventSource.call(obj);
 };

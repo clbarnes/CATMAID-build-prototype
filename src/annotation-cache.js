@@ -125,5 +125,5 @@ AnnotationCache.prototype.add_autocomplete_to_input = function(input)
 };
 
 // Export the annotation cache constructor and a generally available instance.
-CATMAID_AnnotationCache = AnnotationCache;
-CATMAID_annotations = new AnnotationCache();
+export let CATMAID_AnnotationCache = AnnotationCache;
+export let CATMAID_annotations = new AnnotationCache();

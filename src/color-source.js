@@ -137,4 +137,4 @@ var SkeletonColorMode = {
 };
 
 // Export
-CATMAID_ColorSource = ColorSource;
+export let CATMAID_ColorSource = ColorSource;

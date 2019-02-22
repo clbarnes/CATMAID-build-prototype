@@ -376,4 +376,4 @@ var checkGroupName = function(groups, name) {
 };
 
 // Make basic skeleton source available in CATMAID namespace
-CATMAID_BasicSkeletonSource = BasicSkeletonSource;
+export let CATMAID_BasicSkeletonSource = BasicSkeletonSource;

@@ -241,5 +241,5 @@ CATMAID_asEventSource(Similarity);
 
 
 // Export into namespace
-CATMAID_Similarity = Similarity;
+export let CATMAID_Similarity = Similarity;
 

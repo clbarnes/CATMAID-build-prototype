@@ -17,7 +17,7 @@ import {CATMAID} from "./namespace.js";
  * widget. All potentially asynchronous methods return a promise that is
  * resolved once the asynchronous action is complete.
  */
-CATMAID_NeuronNameService = (function()
+export let CATMAID_NeuronNameService = (function()
 {
   // The NeuronNameService is a singleton
   var instance;

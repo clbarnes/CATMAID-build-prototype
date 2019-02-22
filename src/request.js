@@ -303,4 +303,4 @@ RequestQueue.EVENT_REQUEST_ENDED = 'requestqueue_request_ended';
 
 
 // Export into namespace
-CATMAID_RequestQueue = RequestQueue;
+export let CATMAID_RequestQueue = RequestQueue;

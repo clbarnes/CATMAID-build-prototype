@@ -23,7 +23,7 @@ import {CATMAID} from "./namespace.js";
  * @param {boolean} invert    (optional) Whether or not to invert the filter
  *                            result (default is false).
  */
-CATMAID_SkeletonFilterRule = function(strategy, options, mergeMode, skid,
+export let CATMAID_SkeletonFilterRule = function(strategy, options, mergeMode, skid,
     name, invert = false) {
   this.skip = false;
   this.mergeMode = mergeMode || CATMAID_UNION;
@@ -48,7 +48,7 @@ CATMAID_SkeletonFilterRule = function(strategy, options, mergeMode, skid,
  * @param {boolean} invert    (optional) Whether or not to invert the filter
  *                            result (default is false).
  */
-CATMAID_NodeFilterRule = function(strategy, options, mergeMode, invert = false) {
+export let CATMAID_NodeFilterRule = function(strategy, options, mergeMode, invert = false) {
   this.skip = false;
   this.mergeMode = mergeMode || CATMAID_UNION;
   this.strategy = strategy;
@@ -174,10 +174,10 @@ NodeFilter.getActiveRules = function(rules) {
 };
 
 // Export
-CATMAID_NodeFilter = NodeFilter;
+export let CATMAID_NodeFilter = NodeFilter;
 
 
-CATMAID_SkeletonFilter= function(rules, skeletonIndex, cache) {
+export let CATMAID_SkeletonFilter= function(rules, skeletonIndex, cache) {
   this.rules = rules;
   this.skeletonIndex = skeletonIndex;
   this.input = cache || {};
@@ -679,7 +679,7 @@ CATMAID_SkeletonFilter.invert = function(nodeCollection, arbor) {
  * Node filter strategies can be used in skeletotn filter rules. They
  * select individual nodes fom skeletons/arbors.
  */
-CATMAID_NodeFilterStrategy = {
+export let CATMAID_NodeFilterStrategy = {
   "take-all": {
     name: "Take all nodes",
     prepare: ["location"],
@@ -708,7 +708,7 @@ CATMAID_NodeFilterStrategy = {
  * A collection of UI creation methods for individual node filtering
  * strategies from CATMAID_NodeFilterStrategy members.
  */
-CATMAID_NodeFilterSettingFactories = {
+export let CATMAID_NodeFilterSettingFactories = {
   'take-all': function(container, options) {
     // Take all has no additional options
   },
@@ -732,7 +732,7 @@ CATMAID_NodeFilterSettingFactories = {
  * Skeleton filter strategies can be used in skeletotn filter rules. They
  * select individual nodes fom skeletons/arbors.
  */
-CATMAID_SkeletonFilterStrategy = {
+export let CATMAID_SkeletonFilterStrategy = {
   "take-all": {
     name: "Take all nodes of each skeleton",
     prepare: ["arbor"],
@@ -1323,7 +1323,7 @@ CATMAID_SkeletonFilterStrategy = {
  * A collection of UI creation methods for individual node filtering
  * strategies from CATMAID_SkeletonFilterStrategy members.
  */
-CATMAID_SkeletonFilterSettingFactories = {
+export let CATMAID_SkeletonFilterSettingFactories = {
   'take-all': function(container, options) {
     // Take all has no additional options
   },
@@ -1670,18 +1670,18 @@ CATMAID_SkeletonFilterSettingFactories = {
   }
 };
 
-CATMAID_FilterStrategies = new Map([
+export let CATMAID_FilterStrategies = new Map([
   ['node', CATMAID_NodeFilterStrategy],
   ['skeleton', CATMAID_SkeletonFilterStrategy]
 ]);
 
 // A default no-op filter rule that takes all nodes.
-CATMAID_DefaultFilterRuleSets = new Map([
+export let CATMAID_DefaultFilterRuleSets = new Map([
   ['node', [new CATMAID_NodeFilterRule(CATMAID_NodeFilterStrategy['take-all'])]],
   ['skeleton', [new CATMAID_SkeletonFilterRule(CATMAID_SkeletonFilterStrategy['take-all'])]]
 ]);
 
-CATMAID_FilterRules = new Map([
+export let CATMAID_FilterRules = new Map([
   ['node', CATMAID_NodeFilterRule],
   ['skeleton', CATMAID_SkeletonFilterRule]
 ]);
@@ -1726,7 +1726,7 @@ var multiplyComponents = function(m, p) {
 };
 
 // create 12 vertices of a icosahedron
-CATMAID_getIcoSpherePoints = function(x, y, z, radius) {
+export let CATMAID_getIcoSpherePoints = function(x, y, z, radius) {
   return unitIcoSpherePoints
     .map(copyPoint)
     .map(multiplyComponents.bind(null, radius))

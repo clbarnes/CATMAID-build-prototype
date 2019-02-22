@@ -256,5 +256,5 @@ AnnotatedSkeletonsCache.prototype._handleChangedAnnotations = function (changedO
 };
 
 // Export the annotation cache constructor and a generally available instance.
-CATMAID_AnnotatedSkeletonsCache = AnnotatedSkeletonsCache;
-CATMAID_annotatedSkeletons = new CATMAID_AnnotatedSkeletonsCache();
+export let CATMAID_AnnotatedSkeletonsCache = AnnotatedSkeletonsCache;
+export let CATMAID_annotatedSkeletons = new CATMAID_AnnotatedSkeletonsCache();
