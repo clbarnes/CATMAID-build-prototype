@@ -1,29 +1,13 @@
 {
-  "name": "catmaid-lib",
-  "version": "1.0.0",
-  "description": "Library files for CATMAID",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "watch": "webpack --watch",
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build:webpack",
+    "dev": "lerna run dev --stream",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "GPL-3.0-or-later",
+  "author": "clbarnes",
   "devDependencies": {
-    "clean-webpack-plugin": "^1.0.1",
-    "html-webpack-plugin": "^3.2.0",
-    "webpack": "^4.29.5",
-    "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.2.0"
-  },
-  "dependencies": {
-    "es6-promise": "^4.2.6",
-    "jquery": "^3.3.1",
-    "jquery-extend": "^2.0.3",
-    "jszip": "^3.2.0",
-    "msgpack-lite": "^0.1.26",
-    "numeric": "^1.2.6",
-    "three": "0.94.0"
+    "lerna": "^3.13.0"
   }
 }
