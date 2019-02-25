@@ -3,14 +3,14 @@
 import {SkeletonAnnotations} from "./skeleton-annotations";
 import {TracingTool, TracingOverlay, Init} from "./catmaid-things";
 import {
-  Arbor,
   CATMAID,
   CircuitGraphAnalysis,
   fetchSkeletons,
   InstanceRegistry,
   requestQueue,
   SynapseClustering
-} from "catmaid-lib";
+} from "@catmaid/catmaid-lib";
+import {Arbor} from "../../arbor/src/Arbor";
 
 CATMAID.TracingTool = TracingTool;
 CATMAID.TracingOverlay = TracingOverlay;

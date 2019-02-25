@@ -1,6 +1,6 @@
 // CATMAID.{TracingTool, TracingOverlay, Init, skeletonListSources}
 
-import {CATMAID} from 'catmaid-lib';
+import {CATMAID} from '@catmaid/catmaid-lib';
 
 export class TracingTool {
   goToNearestNeuronOrSkeleton(name, id) {

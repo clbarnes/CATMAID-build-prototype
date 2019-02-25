@@ -7,7 +7,7 @@ import * as THREE from 'three';
 import extend from "jquery-extend";
 const $ = {extend};
 
-import {Arbor} from "./Arbor.js";
+import {Arbor} from "../../arbor/src/Arbor";
 
 /** Parse JSON data from compact-skeleton and compact-arbor into an object
  * that contains an Arbor instance and a number of measurements related

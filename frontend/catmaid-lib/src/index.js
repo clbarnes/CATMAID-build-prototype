@@ -123,8 +123,6 @@ Object.defineProperty(CATMAID, "skeletonListSources", {
   }
 });
 
-export {Arbor} from "./Arbor.js";
-
 export {CircuitGraphAnalysis} from "./circuit_graph_analysis.js";
 
 export {InstanceRegistry, fetchSkeletons} from "./utils.js";

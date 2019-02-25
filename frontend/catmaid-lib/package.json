@@ -1,5 +1,5 @@
 {
-  "name": "catmaid-lib",
+  "name": "@catmaid/catmaid-lib",
   "version": "1.0.0",
   "description": "Library files for CATMAID",
   "main": "./src/index.js",
@@ -22,6 +22,7 @@
     "jszip": "^3.2.0",
     "msgpack-lite": "^0.1.26",
     "numeric": "^1.2.6",
-    "three": "0.94.0"
+    "three": "0.94.0",
+    "@catmaid/arbor": "1.0.0"
   }
 }
