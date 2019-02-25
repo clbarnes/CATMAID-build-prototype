@@ -2,7 +2,7 @@
   "main": "index.js",
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "lerna run build:webpack",
+    "build": "lerna run build",
     "dev": "lerna run dev --stream",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf dist/ & find . -name \"node_modules\" -type d -prune -exec rm -rf '{}' +",
