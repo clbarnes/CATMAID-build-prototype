@@ -15,13 +15,40 @@ module.exports = {
     // libraryTarget: 'var',
     // library: '[name]',
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname + '../../dist')
+    path: path.resolve(__dirname + '/../../dist')
   },
   optimization: {
     splitChunks: {
+      name: "true",
       chunks: "all"
     },
     // minimizer: [new TerserPlugin({parallel: true, sourceMap: true})]
+  },
+  resolve: {
+    modules: ['node_modules'],
+    extensions: ['.js', '.ts'],
+    symlinks: false
+  },
+  module: {
+    rules: [
+      {
+        test: /\.m?[jt]s$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            "presets": [
+              // "@babel/typescript",
+              "@babel/preset-env"
+            ],
+            // "plugins": [
+            //   "@babel/proposal-class-properties",
+            //   "@babel/proposal-object-rest-spread"
+            // ]
+          }
+        }
+      }
+    ]
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),

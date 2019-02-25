@@ -9,26 +9,26 @@ class Skeleton {
 }
 
 export class SkeletonAnnotations {
-  EVENT_ACTIVE_NODE_CHANGED = "event_active_node_changed";
-  EVENT_ACTIVE_NODE_JOINED = "event_active_node_joined";
-  EVENT_ACTIVE_NODE_DELETED = "event_active_node_deleted";
+  // EVENT_ACTIVE_NODE_CHANGED = "event_active_node_changed";
+  // EVENT_ACTIVE_NODE_JOINED = "event_active_node_joined";
+  // EVENT_ACTIVE_NODE_DELETED = "event_active_node_deleted";
+  //
+  // activeSkeleton;
+  // activeNodeId = 2;
 
-  activeSkeleton = Skeleton(1);
-  activeNodeId = 2;
-
-  static getActiveSkeletonId() {
+  getActiveSkeletonId() {
     return SkeletonAnnotations.activeSkeleton.id;
   }
 
-  static getActiveNodeId() {
+  getActiveNodeId() {
     return SkeletonAnnotations.activeNodeId;
   }
 
-  static getChildOfVirtualNode(nodeId) {
+  getChildOfVirtualNode(nodeId) {
     return nodeId + 1;
   }
 
-  static isRealNode(nodeId) {
+  isRealNode(nodeId) {
     return true;
   }
 }

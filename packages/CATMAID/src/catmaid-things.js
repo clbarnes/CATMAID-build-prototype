@@ -3,13 +3,13 @@
 import {CATMAID} from 'catmaid-lib';
 
 export class TracingTool {
-  static goToNearestNeuronOrSkeleton(name, id) {
+  goToNearestNeuronOrSkeleton(name, id) {
     return true;
   }
 }
 
 export class TracingOverlay {
-  Settings = new CATMAID.Settings("name", {});
+  // Settings = new CATMAID.Settings("name", {});
 }
 
 export class Init {
