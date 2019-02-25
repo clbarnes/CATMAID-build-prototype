@@ -1,7 +1,7 @@
 // project, SkeletonAnnotations, CATMAID.{TracingTool, TracingOverlay, Init, skeletonListSources}, glWidget?, CATMAID_CLIENT_VERSION
 
-import {SkeletonAnnotations} from "./skeleton-annotations";
-import {TracingTool, TracingOverlay, Init} from "./catmaid-things";
+import {SkeletonAnnotations} from "./src/skeleton-annotations";
+import {TracingTool, TracingOverlay, Init} from "./src/catmaid-things";
 import {
   CATMAID,
   CircuitGraphAnalysis,
@@ -9,8 +9,8 @@ import {
   InstanceRegistry,
   requestQueue,
   SynapseClustering
-} from "@catmaid/catmaid-lib";
-import {Arbor} from "../../arbor/src/Arbor";
+} from "../catmaid-lib";
+import {Arbor} from "../arbor/src/Arbor";
 
 CATMAID.TracingTool = TracingTool;
 CATMAID.TracingOverlay = TracingOverlay;
