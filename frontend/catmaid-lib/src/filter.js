@@ -7,7 +7,7 @@ import {Promise} from "es6-promise";
 
 import {CATMAID_ValueError} from "./error";
 import {CATMAID_fetch, CATMAID_makeURL} from "./CATMAID";
-import {SynapseClustering} from "./synapse_clustering";
+import {SynapseClustering} from "@catmaid/synapse_clustering";
 import {CATMAID_ArborParser} from "./arbor_parser";
 import {fetchSkeletons} from "./utils";
 import * as CATMAID_tools from "./tools";

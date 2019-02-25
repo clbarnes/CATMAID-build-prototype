@@ -126,5 +126,3 @@ Object.defineProperty(CATMAID, "skeletonListSources", {
 export {CircuitGraphAnalysis} from "./circuit_graph_analysis.js";
 
 export {InstanceRegistry, fetchSkeletons} from "./utils.js";
-
-export {SynapseClustering} from "./synapse_clustering.js";
