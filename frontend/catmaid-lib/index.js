@@ -126,3 +126,6 @@ Object.defineProperty(CATMAID, "skeletonListSources", {
 export {CircuitGraphAnalysis} from "./src/circuit_graph_analysis.js";
 
 export {InstanceRegistry, fetchSkeletons} from "./src/utils.js";
+
+import * as d3 from "./vendor/d3/d3.v3.min";
+export {d3}
