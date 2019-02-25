@@ -5,7 +5,7 @@
   */
 
 import $ from "jquery";
-import {d3} from "../../../vendor/d3/d3.v3.min";
+import {d3} from "../vendor/d3/d3.v3.min";
 
 
 var SVGUtil = {};

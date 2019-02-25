@@ -123,26 +123,10 @@ Object.defineProperty(CATMAID, "skeletonListSources", {
   }
 });
 
-import {Arbor} from "./Arbor.js";
-export {Arbor};
+export {Arbor} from "./Arbor.js";
 
-import {CircuitGraphAnalysis} from "./circuit_graph_analysis.js";
-export {CircuitGraphAnalysis}
+export {CircuitGraphAnalysis} from "./circuit_graph_analysis.js";
 
-import {InstanceRegistry, fetchSkeletons} from "./utils.js";
-export {InstanceRegistry, fetchSkeletons};
+export {InstanceRegistry, fetchSkeletons} from "./utils.js";
 
-import {SynapseClustering} from "./synapse_clustering.js";
-export {SynapseClustering};
-
-for (let obj of [window, global]) {
-  if (obj) {
-    obj.CATMAID = CATMAID;
-    obj.requestQueue = requestQueue;
-    obj.Arbor = Arbor;
-    obj.CircuitGraphAnalysis = CircuitGraphAnalysis;
-    obj.SynapseClustering = SynapseClustering;
-    obj.InstanceRegistry = InstanceRegistry;
-    obj.fetchSkeletons = fetchSkeletons;
-  }
-}
+export {SynapseClustering} from "./synapse_clustering.js";
