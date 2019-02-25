@@ -4,10 +4,12 @@
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build:webpack",
     "dev": "lerna run dev --stream",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -r dist/ & find . -name \"node_modules\" -type d -prune -exec rm -rf '{}' +"
   },
   "author": "clbarnes",
   "devDependencies": {
     "lerna": "^3.13.0"
-  }
+  },
+  "dependencies": {}
 }
