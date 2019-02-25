@@ -15,7 +15,7 @@ module.exports = {
     // libraryTarget: 'var',
     // library: '[name]',
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname + '../../dist')
   },
   optimization: {
     splitChunks: {
