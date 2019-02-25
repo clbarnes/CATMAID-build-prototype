@@ -24,6 +24,8 @@ Open [./dist/index.html](./dist/index.html)
 
 The DOM will be empty but CATMAID-lib etc. will be available in the console.
 
+Targets the last 3 versions of chrome, firefox, safari, edge, plus IE11.
+
 ## Dev server
 
 I had this working, but since then redistributed config files and dependencies between 
