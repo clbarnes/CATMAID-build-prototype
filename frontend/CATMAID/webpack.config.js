@@ -5,7 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: './index.js',
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist'
@@ -19,7 +19,7 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
-      name: "true",
+      name: true,
       chunks: "all"
     },
     // minimizer: [new TerserPlugin({parallel: true, sourceMap: true})]

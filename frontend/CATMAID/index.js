@@ -8,9 +8,8 @@ import {
   fetchSkeletons,
   InstanceRegistry,
   requestQueue,
-  SynapseClustering
 } from "../catmaid-lib";
-import {Arbor} from "../arbor/src/Arbor";
+import {Arbor, SynapseClustering} from "@catmaid/arbor";
 
 CATMAID.TracingTool = TracingTool;
 CATMAID.TracingOverlay = TracingOverlay;
