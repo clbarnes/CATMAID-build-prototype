@@ -9,7 +9,6 @@ export class TracingTool {
 }
 
 export class TracingOverlay {
-  // @ts-ignore
   public static Settings = new CATMAID.Settings("name", {});
 }
 

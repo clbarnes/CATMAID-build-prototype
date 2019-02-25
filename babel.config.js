@@ -8,20 +8,20 @@ module.exports = function babelConfig(api) {
       './frontend/*',
     ],
     presets: [
-      // [
-      //   '@babel/preset-env',
-      //   {
-      //     targets: {
-      //       browsers: [
-      //         'last 3 chrome versions',
-      //         'last 3 firefox versions',
-      //         'last 3 safari versions',
-      //         'last 3 edge versions',
-      //         'ie 11'
-      //        ],
-      //     },
-      //   },
-      // ],
+      [
+        '@babel/preset-env',
+        {
+          targets: {
+            browsers: [
+              'last 3 chrome versions',
+              'last 3 firefox versions',
+              'last 3 safari versions',
+              'last 3 edge versions',
+              'ie 11'
+             ],
+          },
+        },
+      ],
       '@babel/typescript'
     ],
     plugins: [
