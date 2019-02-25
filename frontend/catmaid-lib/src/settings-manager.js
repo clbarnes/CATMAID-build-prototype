@@ -3,6 +3,8 @@ import extend from "jquery-extend";
 const $ = {extend};
 import {Promise} from "es6-promise";
 
+import {CATMAID_DataStoreManager, CATMAID_DataStore} from "./datastores";
+
 
 
 /**

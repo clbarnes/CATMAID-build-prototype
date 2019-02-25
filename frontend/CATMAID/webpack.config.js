@@ -5,7 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './index.js',
+  entry: './index.ts',
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist'
@@ -15,6 +15,7 @@ module.exports = {
     // libraryTarget: 'var',
     // library: '[name]',
     filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js',
     path: path.resolve(__dirname + '/../../dist')
   },
   optimization: {
@@ -27,7 +28,7 @@ module.exports = {
   resolve: {
     modules: ['node_modules'],
     extensions: ['.js', '.ts'],
-    symlinks: false
+    symlinks: true
   },
   module: {
     rules: [
@@ -35,17 +36,8 @@ module.exports = {
         test: /\.m?[jt]s$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            "presets": [
-              // "@babel/typescript",
-              "@babel/preset-env"
-            ],
-            // "plugins": [
-            //   "@babel/proposal-class-properties",
-            //   "@babel/proposal-object-rest-spread"
-            // ]
-          }
+          loader: require.resolve('babel-loader'),
+          options: {rootMode: 'upward'}
         }
       }
     ]

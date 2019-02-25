@@ -10,8 +10,26 @@
   },
   "author": "clbarnes",
   "devDependencies": {
-    "lerna": "^3.13.0"
+    "@babel/core": "^7.3.3",
+    "@babel/plugin-proposal-class-properties": "^7.3.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-typescript": "^7.3.3",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "lerna": "^3.13.0",
+    "typescript": "^3.3.3333",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.0"
   },
-  "dependencies": {},
-  "license": "GPL-3.0-or-later"
+  "dependencies": {
+    "@catmaid/arbor": "file:frontend/arbor",
+    "@catmaid/catmaid": "file:frontend/CATMAID",
+    "@catmaid/catmaid-lib": "file:frontend/catmaid-lib"
+  },
+  "license": "GPL-3.0-or-later",
+  "name": "catmaid-remix"
 }
